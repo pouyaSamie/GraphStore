@@ -583,6 +583,7 @@
     <Content Include="include\header.html" />
     <Content Include="include\menu.html" />
     <Content Include="index.html" />
+    <Content Include="js\app.js" />
     <Content Include="js\auth\login.js" />
     <Content Include="js\auth\logout.js" />
     <Content Include="js\auth\profile.js" />

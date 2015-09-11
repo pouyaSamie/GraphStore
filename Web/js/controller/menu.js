@@ -23,7 +23,7 @@ graphStore.controller('menu', function ($scope, $http) {
             });
         });
     };
-   // $scope.getData();
+   $scope.getData();
 
 
 });

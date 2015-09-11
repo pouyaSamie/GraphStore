@@ -7,11 +7,11 @@ Imports System.Data.Entity
 
 <RoutePrefix("api/files")>
 Public Class ProductFileController
-    Inherits BaseController
+    Inherits NotAuthBaseController
 
     <Route("~/api/UploadFile")>
     <HttpPost>
-    Public Async Function Upload(productID As Integer) As Task(Of HttpResponseMessage)
+    Public Async Function Upload(<FromBody> productID As Integer) As Task(Of HttpResponseMessage)
 
         ' Check if the request contains multipart/form-data.
         If Not Request.Content.IsMimeMultipartContent() Then
