@@ -1,5 +1,5 @@
 var graphStore = angular.module('graphStore', ['ui.router','ngMessages','mgcrea.ngStrap',
-    'ui.bootstrap', 'LocalStorageModule', 'pascalprecht.translate', 'satellizer']);
+    'ui.bootstrap', 'LocalStorageModule', 'pascalprecht.translate', 'satellizer', 'angularFileUpload']);
 
 graphStore.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider, $translateProvider, $authProvider) {
 
@@ -37,6 +37,11 @@ graphStore.config(function ($stateProvider, $urlRouterProvider, localStorageServ
             url: '/logout',
             template: null,
             controller: 'LogoutCtrl'
+        })
+        .state('uploader', {
+            url: '/uploader',
+            templateUrl: 'pages/uploader.html',
+            controller: 'uploaderCtrl'
         })
         .state('profile', {
             url: '/profile',

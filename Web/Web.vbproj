@@ -183,7 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Files\" />
-    <Folder Include="data\ProfilePictures\" />
+    <Folder Include="picture_library\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -563,6 +563,7 @@
     <Content Include="img\mono-chorme-logo.svg" />
     <Content Include="img\namad.png" />
     <Content Include="img\page-logo.svg" />
+    <Content Include="include\fileuploader.html" />
     <Content Include="include\footer.html" />
     <Content Include="include\header.html" />
     <Content Include="include\menu.html" />
@@ -582,12 +583,21 @@
     <Content Include="js\controller\product.html" />
     <Content Include="js\controller\product.js" />
     <Content Include="js\controller\search.js" />
+    <Content Include="js\controller\uploader.js" />
     <Content Include="js\controller\viewcart.js" />
+    <Content Include="js\directives\fileuploader.js" />
     <Content Include="js\directives\passwordMatch.js" />
     <Content Include="js\directives\passwordStrength.js" />
     <Content Include="js\page.js" />
     <Content Include="js\services\account.js" />
     <Content Include="js\services\services.js" />
+    <Content Include="lib\downloadify\images\download.png" />
+    <Content Include="lib\downloadify\js\downloadify.min.js" />
+    <Content Include="lib\downloadify\js\swfobject.js" />
+    <Content Include="lib\downloadify\LICENSE.txt" />
+    <Content Include="lib\downloadify\media\downloadify.swf" />
+    <Content Include="lib\downloadify\src\downloadify.js" />
+    <Content Include="lib\downloadify\test.html" />
     <Content Include="lib\imagelightbox.js" />
     <Content Include="lib\ng-message.js" />
     <Content Include="lib\owl.carousel\assets\owl.carousel.css" />
@@ -720,6 +730,7 @@
     <Content Include="pages\product.html" />
     <Content Include="pages\profile.html" />
     <Content Include="pages\signup.html" />
+    <Content Include="pages\uploader.html" />
     <Content Include="pages\viewcart.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1229,6 +1240,11 @@
     <Content Include="fonts\yekan.ttf" />
     <Content Include="data\ProductFiles\49D64597-502F-4728-9297-2D1B1F121B78" />
     <Content Include="fonts\BRoyaBold.ttf" />
+    <Content Include="data\ProfilePictures\aaa" />
+    <Content Include="lib\downloadify\README.textile" />
+    <Content Include="lib\downloadify\src\com\dynamicflash\util\Base64.as" />
+    <Content Include="lib\downloadify\src\com\dynamicflash\util\tests\Base64Test.as" />
+    <Content Include="lib\downloadify\src\Downloadify.as" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

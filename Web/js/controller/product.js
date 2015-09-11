@@ -71,14 +71,40 @@ graphStore.controller('product', function ($scope, $http, $rootScope, Service, $
             $rootScope.$broadcast('addToBasket', {productData: $scope.data});
         }
     };
-    $scope.download = function(data){
+    $scope.download = function (data) {
 
         $http({
             url: "/api/files/127485bd-6b8c-4058-a7c8-20e1aadb352d",
             method: "get"
         })
             .success(function (response) {
-               log("Doiwnload success")
+                log("Doiwnload success")
+                log(response)
+
+                Downloadify.create('downloadify', {
+                    filename: function () {
+                        return "sss";
+                    },
+                    data: function () {
+                        return "sssssss";
+                    },
+                    onComplete: function () {
+                        alert('Your File Has Been Saved!');
+                    },
+                    onCancel: function () {
+                        alert('You have cancelled the saving of this file.');
+                    },
+                    onError: function () {
+                        alert('You must put something in the File Contents or there will be nothing to save!');
+                    },
+                    transparent: false,
+                    swf: 'lib/downloadify/media/downloadify.swf',
+                    downloadImage: 'lib/downloadify/images/download.png',
+                    width: 100,
+                    height: 30,
+                    transparent: true,
+                    append: false
+                });
             });
 
     };
