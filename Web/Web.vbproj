@@ -214,6 +214,21 @@
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="bower_components\angular-file-upload\dist\angular-file-upload.min.js" />
+    <Content Include="bower_components\angular-file-upload\gulpfile.js" />
+    <Content Include="bower_components\angular-file-upload\license.txt" />
+    <Content Include="bower_components\angular-file-upload\src\directives\FileDrop.js" />
+    <Content Include="bower_components\angular-file-upload\src\directives\FileOver.js" />
+    <Content Include="bower_components\angular-file-upload\src\directives\FileSelect.js" />
+    <Content Include="bower_components\angular-file-upload\src\index.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileDirective.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileDrop.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileItem.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileLikeObject.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileOver.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileSelect.js" />
+    <Content Include="bower_components\angular-file-upload\src\services\FileUploader.js" />
+    <Content Include="bower_components\angular-file-upload\src\values\options.js" />
     <Content Include="bower_components\angular-local-storage\demo\demo-app.js" />
     <Content Include="bower_components\angular-local-storage\demo\demo-style.css" />
     <Content Include="bower_components\angular-local-storage\demo\demo.html" />
@@ -1245,6 +1260,14 @@
     <Content Include="lib\downloadify\src\com\dynamicflash\util\Base64.as" />
     <Content Include="lib\downloadify\src\com\dynamicflash\util\tests\Base64Test.as" />
     <Content Include="lib\downloadify\src\Downloadify.as" />
+    <Content Include="bower_components\angular-file-upload\.bower.json" />
+    <Content Include="bower_components\angular-file-upload\.gitignore" />
+    <Content Include="bower_components\angular-file-upload\.jshintrc" />
+    <Content Include="bower_components\angular-file-upload\bower.json" />
+    <Content Include="bower_components\angular-file-upload\dist\angular-file-upload.min.js.map" />
+    <Content Include="bower_components\angular-file-upload\package.json" />
+    <Content Include="bower_components\angular-file-upload\README.md" />
+    <Content Include="bower_components\angular-file-upload\src\config.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
