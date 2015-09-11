@@ -834,6 +834,7 @@
     <Compile Include="server\Models\ProductTag.vb">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="server\Models\ResponseModel.vb" />
     <Compile Include="server\Models\SentMail.vb">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -859,7 +860,7 @@
     <Compile Include="server\Models\Enums.vb" />
     <Compile Include="server\Repository\EF\Dynamic.vb" />
     <Compile Include="server\Repository\EF\GenericRepository.vb" />
-    <Compile Include="server\Repository\filterModel.vb" />
+    <Compile Include="server\Models\filterModel.vb" />
     <Compile Include="server\Repository\Helper.vb" />
     <Compile Include="server\Repository\IGenericRepository.vb" />
     <Compile Include="server\Repository\IRepository.vb" />
