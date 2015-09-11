@@ -749,7 +749,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="server\BaseEnumDescriptor.vb" />
     <Compile Include="server\Controllers\BaseController.vb" />
     <Compile Include="server\Controllers\FileController.vb" />
     <Compile Include="server\Controllers\MenuController.vb" />
@@ -848,16 +847,12 @@
     <Compile Include="server\Logging\Enums.vb" />
     <Compile Include="server\Logging\Logger.vb" />
     <Compile Include="server\Models\Enums.vb" />
-    <Compile Include="server\Models\SearchRequestModel.vb" />
-    <Compile Include="server\Models\SearchResponseModel.vb" />
-    <Compile Include="server\Repository\EF\DBInitializer.vb" />
     <Compile Include="server\Repository\EF\Dynamic.vb" />
     <Compile Include="server\Repository\EF\GenericRepository.vb" />
     <Compile Include="server\Repository\filterModel.vb" />
     <Compile Include="server\Repository\Helper.vb" />
     <Compile Include="server\Repository\IGenericRepository.vb" />
     <Compile Include="server\Repository\IRepository.vb" />
-    <Compile Include="server\Repository\EF\iWorkContext.vb" />
     <Compile Include="server\Repository\SQL\SqlHelper.vb" />
     <Compile Include="server\Repository\SQL\SqlHelper\NonCommandParameterAttribute.vb" />
     <Compile Include="server\Repository\SQL\SqlHelper\SchemaModel.vb" />
