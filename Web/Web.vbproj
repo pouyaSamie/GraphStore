@@ -761,7 +761,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="server\Controllers\BaseController.vb" />
-    <Compile Include="server\Controllers\FileController.vb" />
     <Compile Include="server\Controllers\MenuController.vb" />
     <Compile Include="server\Controllers\OrderController.vb" />
     <Compile Include="server\Controllers\ProductController.vb" />
