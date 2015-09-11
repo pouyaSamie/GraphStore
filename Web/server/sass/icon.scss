@@ -1,0 +1,44 @@
+.icon-sheet{
+  background-image: url(../img/icon-sheet.png);
+  background-repeat: no-repeat;
+}
+
+.icon-24{
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.shoping-cart-icon-white,
+.shoping-cart-icon {
+  @extend .icon-sheet;
+  @extend .icon-24;
+  background-position: 0px 0px;
+}
+
+.shoping-cart-icon-white{
+  background-position: 0px -24px;
+}
+
+.search-icon {
+  @extend .icon-sheet;
+  @extend .icon-24;
+  background-position: -24px 0px;
+}
+.star-icon-white,
+.star-icon{
+  @extend .icon-sheet;
+  @extend .icon-24;
+  background-position: -48px 0;
+
+}
+
+.star-icon-white{
+  background-position: -48px -24px;
+}
+
+.zoom-icon{
+  @extend .icon-sheet;
+  @extend .icon-24;
+  background-position: -72px 0;
+}

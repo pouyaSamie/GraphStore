@@ -1,0 +1,22 @@
+<div class="mega-menu  wow fadeInUp">
+    <div class="container">
+        <nav class="navbar yamm " role="navigation" ng-controller="menu">
+            <ul>
+                <li class="dropdown yamm-fw" ng-repeat="menuItem in menuData">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{menuItem.title}}
+                    </a>
+                    <ul class="dropdown-menu ">
+                        <li class="menu-triangle"></li>
+                        <li class="sub-menu">
+                            <a ng-repeat="subMenuItem in menuItem.childs" class="col-md-3"
+                               ui-sref="gallery({'category_Id': subMenuItem.menuId})" >
+                                {{subMenuItem.title}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

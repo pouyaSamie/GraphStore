@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GraphStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Advertisements">
+          <Key>
+            <PropertyRef Name="AdvertisementID" />
+          </Key>
+          <Property Name="AdvertisementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FilePath" Type="int" Nullable="false" />
+          <Property Name="StatusCode" Type="tinyint" Nullable="false" />
+          <Property Name="ActiveDate" Type="datetime" />
+          <Property Name="SentByUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="DownloadLinks">
+          <Key>
+            <PropertyRef Name="DownloadLinkID" />
+          </Key>
+          <Property Name="DownloadLinkID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderDetailId" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DownloadToken" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="Hits" Type="int" Nullable="false" />
+          <Property Name="ExpireAfterDownload" Type="bit" Nullable="false" />
+          <Property Name="Downloaded" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplates">
+          <Key>
+            <PropertyRef Name="EmailTemplateID" />
+          </Key>
+          <Property Name="EmailTemplateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar(max)" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Footer" Type="nvarchar(max)" />
+          <Property Name="EmailTemplateTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplateTypes">
+          <Key>
+            <PropertyRef Name="EmailTemplateTypeId" />
+          </Key>
+          <Property Name="EmailTemplateTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FAQs">
+          <Key>
+            <PropertyRef Name="FaqId" />
+          </Key>
+          <Property Name="FaqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Guid" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Size" Type="bigint" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateById" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="UrlType" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="NewsSubscriptions">
+          <Key>
+            <PropertyRef Name="NewsSubscriptionID" />
+          </Key>
+          <Property Name="NewsSubscriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="TrakingNumber" Type="nvarchar(max)" />
+          <Property Name="IsPaied" Type="bit" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductCategories">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductFiles">
+          <Key>
+            <PropertyRef Name="ProductFileID" />
+          </Key>
+          <Property Name="ProductFileID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GUID" Type="nvarchar(max)" />
+          <Property Name="Capacity" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductPics">
+          <Key>
+            <PropertyRef Name="ProductPicID" />
+          </Key>
+          <Property Name="ProductPicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PicPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DimentionW" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DimentionD" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DimentionH" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DimentionS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProductCategoryId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ProductTags">
+          <Key>
+            <PropertyRef Name="ProductTagID" />
+          </Key>
+          <Property Name="ProductTagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="TagID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SentMails">
+          <Key>
+            <PropertyRef Name="SentMailID" />
+          </Key>
+          <Property Name="SentMailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailTemplateID" Type="int" Nullable="false" />
+          <Property Name="SentBody" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SlidePhotos">
+          <Key>
+            <PropertyRef Name="SlidePhotoId" />
+          </Key>
+          <Property Name="SlidePhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SlidePhotoPath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserFavorites">
+          <Key>
+            <PropertyRef Name="UserFavoriteID" />
+          </Key>
+          <Property Name="UserFavoriteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProductCategoryFavorites">
+          <Key>
+            <PropertyRef Name="UserProductCategoryFavoriteID" />
+          </Key>
+          <Property Name="UserProductCategoryFavoriteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Picture" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="Home" Type="nvarchar(max)" />
+          <Property Name="SecondaryEmail" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+          <Property Name="RecruitmentStartDate" Type="datetime" Nullable="false" />
+          <Property Name="RecruitmentEndDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId">
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="1" />
+          <End Role="DownloadLinks" Type="Self.DownloadLinks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderDetails">
+              <PropertyRef Name="OrderDetailId" />
+            </Principal>
+            <Dependent Role="DownloadLinks">
+              <PropertyRef Name="OrderDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId">
+          <End Role="EmailTemplateTypes" Type="Self.EmailTemplateTypes" Multiplicity="1" />
+          <End Role="EmailTemplates" Type="Self.EmailTemplates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailTemplateTypes">
+              <PropertyRef Name="EmailTemplateTypeId" />
+            </Principal>
+            <Dependent Role="EmailTemplates">
+              <PropertyRef Name="EmailTemplateTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Menus_dbo_Menus_ParentId">
+          <End Role="Menus" Type="Self.Menus" Multiplicity="0..1" />
+          <End Role="Menus1" Type="Self.Menus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="Menus1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderID">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Products_ProductId">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductCategories_dbo_ProductCategories_ParentId">
+          <End Role="ProductCategories" Type="Self.ProductCategories" Multiplicity="0..1" />
+          <End Role="ProductCategories1" Type="Self.ProductCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategories">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="ProductCategories1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductFiles_dbo_Products_ProductID">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductFiles" Type="Self.ProductFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductFiles">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductPics_dbo_Products_ProductId">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductPics" Type="Self.ProductPics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductPics">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductTags_dbo_Products_ProductId">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductTags" Type="Self.ProductTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductTags">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductTags_dbo_Tags_TagID">
+          <End Role="Tags" Type="Self.Tags" Multiplicity="1" />
+          <End Role="ProductTags" Type="Self.ProductTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="TagID" />
+            </Principal>
+            <Dependent Role="ProductTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID">
+          <End Role="EmailTemplates" Type="Self.EmailTemplates" Multiplicity="1" />
+          <End Role="SentMails" Type="Self.SentMails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailTemplates">
+              <PropertyRef Name="EmailTemplateID" />
+            </Principal>
+            <Dependent Role="SentMails">
+              <PropertyRef Name="EmailTemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserFavorites_dbo_Products_ProductId">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="UserFavorites" Type="Self.UserFavorites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserFavorites">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID">
+          <End Role="ProductCategories" Type="Self.ProductCategories" Multiplicity="1" />
+          <End Role="UserProductCategoryFavorites" Type="Self.UserProductCategoryFavorites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategories">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="UserProductCategoryFavorites">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DownloadLinks_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="DownloadLinks" Type="Self.DownloadLinks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DownloadLinks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsSubscriptions_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="NewsSubscriptions" Type="Self.NewsSubscriptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsSubscriptions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Menus">
+          <End Role="Menus" Type="Self.Menus" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="ProductCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentMails_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="SentMails" Type="Self.SentMails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SentMails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFavorites_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserFavorites" Type="Self.UserFavorites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavorites">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProductCategoryFavorites_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserProductCategoryFavorites" Type="Self.UserProductCategoryFavorites" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserProductCategoryFavorites">
+              <PropertyRef Name="UserProductCategoryFavoriteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GraphStoreModelStoreContainer">
+          <EntitySet Name="Advertisements" EntityType="Self.Advertisements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DownloadLinks" EntityType="Self.DownloadLinks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailTemplateTypes" EntityType="Self.EmailTemplateTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAQs" EntityType="Self.FAQs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsSubscriptions" EntityType="Self.NewsSubscriptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategories" EntityType="Self.ProductCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductFiles" EntityType="Self.ProductFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductPics" EntityType="Self.ProductPics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductTags" EntityType="Self.ProductTags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SentMails" EntityType="Self.SentMails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SlidePhotos" EntityType="Self.SlidePhotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserFavorites" EntityType="Self.UserFavorites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProductCategoryFavorites" EntityType="Self.UserProductCategoryFavorites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId" Association="Self.FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId">
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+            <End Role="DownloadLinks" EntitySet="DownloadLinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId" Association="Self.FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId">
+            <End Role="EmailTemplateTypes" EntitySet="EmailTemplateTypes" />
+            <End Role="EmailTemplates" EntitySet="EmailTemplates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Menus_dbo_Menus_ParentId" Association="Self.FK_dbo_Menus_dbo_Menus_ParentId">
+            <End Role="Menus" EntitySet="Menus" />
+            <End Role="Menus1" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Products_ProductId" Association="Self.FK_dbo_OrderDetails_dbo_Products_ProductId">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductCategories_dbo_ProductCategories_ParentId" Association="Self.FK_dbo_ProductCategories_dbo_ProductCategories_ParentId">
+            <End Role="ProductCategories" EntitySet="ProductCategories" />
+            <End Role="ProductCategories1" EntitySet="ProductCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductFiles_dbo_Products_ProductID" Association="Self.FK_dbo_ProductFiles_dbo_Products_ProductID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductFiles" EntitySet="ProductFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductPics_dbo_Products_ProductId" Association="Self.FK_dbo_ProductPics_dbo_Products_ProductId">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductPics" EntitySet="ProductPics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductTags_dbo_Products_ProductId" Association="Self.FK_dbo_ProductTags_dbo_Products_ProductId">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductTags" EntitySet="ProductTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductTags_dbo_Tags_TagID" Association="Self.FK_dbo_ProductTags_dbo_Tags_TagID">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="ProductTags" EntitySet="ProductTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID" Association="Self.FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID">
+            <End Role="EmailTemplates" EntitySet="EmailTemplates" />
+            <End Role="SentMails" EntitySet="SentMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserFavorites_dbo_Products_ProductId" Association="Self.FK_dbo_UserFavorites_dbo_Products_ProductId">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserFavorites" EntitySet="UserFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID" Association="Self.FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID">
+            <End Role="ProductCategories" EntitySet="ProductCategories" />
+            <End Role="UserProductCategoryFavorites" EntitySet="UserProductCategoryFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DownloadLinks_Users" Association="Self.FK_DownloadLinks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="DownloadLinks" EntitySet="DownloadLinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsSubscriptions_Users" Association="Self.FK_NewsSubscriptions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NewsSubscriptions" EntitySet="NewsSubscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Menus" Association="Self.FK_Products_Menus">
+            <End Role="Menus" EntitySet="Menus" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentMails_Users" Association="Self.FK_SentMails_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="SentMails" EntitySet="SentMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFavorites_Users" Association="Self.FK_UserFavorites_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserFavorites" EntitySet="UserFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProductCategoryFavorites_Users" Association="Self.FK_UserProductCategoryFavorites_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserProductCategoryFavorites" EntitySet="UserProductCategoryFavorites" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GraphStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DefaultContext" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="Advertisements" EntityType="GraphStoreModel.Advertisement" />
+          <EntitySet Name="DownloadLinks" EntityType="GraphStoreModel.DownloadLink" />
+          <EntitySet Name="EmailTemplates" EntityType="GraphStoreModel.EmailTemplate" />
+          <EntitySet Name="EmailTemplateTypes" EntityType="GraphStoreModel.EmailTemplateType" />
+          <EntitySet Name="FAQs" EntityType="GraphStoreModel.FAQ" />
+          <EntitySet Name="Files" EntityType="GraphStoreModel.File" />
+          <EntitySet Name="Menus" EntityType="GraphStoreModel.Menu" />
+          <EntitySet Name="NewsSubscriptions" EntityType="GraphStoreModel.NewsSubscription" />
+          <EntitySet Name="OrderDetails" EntityType="GraphStoreModel.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="GraphStoreModel.Order" />
+          <EntitySet Name="ProductCategories" EntityType="GraphStoreModel.ProductCategory" />
+          <EntitySet Name="ProductFiles" EntityType="GraphStoreModel.ProductFile" />
+          <EntitySet Name="ProductPics" EntityType="GraphStoreModel.ProductPic" />
+          <EntitySet Name="Products" EntityType="GraphStoreModel.Product" />
+          <EntitySet Name="ProductTags" EntityType="GraphStoreModel.ProductTag" />
+          <EntitySet Name="SentMails" EntityType="GraphStoreModel.SentMail" />
+          <EntitySet Name="SlidePhotos" EntityType="GraphStoreModel.SlidePhoto" />
+          <EntitySet Name="Tags" EntityType="GraphStoreModel.Tag" />
+          <EntitySet Name="UserFavorites" EntityType="GraphStoreModel.UserFavorite" />
+          <EntitySet Name="UserProductCategoryFavorites" EntityType="GraphStoreModel.UserProductCategoryFavorite" />
+          <EntitySet Name="Users" EntityType="GraphStoreModel.User" />
+          <AssociationSet Name="FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId" Association="GraphStoreModel.FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId">
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+            <End Role="DownloadLink" EntitySet="DownloadLinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DownloadLinks_Users" Association="GraphStoreModel.FK_DownloadLinks_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DownloadLink" EntitySet="DownloadLinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId" Association="GraphStoreModel.FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId">
+            <End Role="EmailTemplateType" EntitySet="EmailTemplateTypes" />
+            <End Role="EmailTemplate" EntitySet="EmailTemplates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID" Association="GraphStoreModel.FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID">
+            <End Role="EmailTemplate" EntitySet="EmailTemplates" />
+            <End Role="SentMail" EntitySet="SentMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Menus_dbo_Menus_ParentId" Association="GraphStoreModel.FK_dbo_Menus_dbo_Menus_ParentId">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="Menu1" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Menus" Association="GraphStoreModel.FK_Products_Menus">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsSubscriptions_Users" Association="GraphStoreModel.FK_NewsSubscriptions_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="NewsSubscription" EntitySet="NewsSubscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderID" Association="GraphStoreModel.FK_dbo_OrderDetails_dbo_Orders_OrderID">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Products_ProductId" Association="GraphStoreModel.FK_dbo_OrderDetails_dbo_Products_ProductId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="GraphStoreModel.FK_Orders_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductCategories_dbo_ProductCategories_ParentId" Association="GraphStoreModel.FK_dbo_ProductCategories_dbo_ProductCategories_ParentId">
+            <End Role="ProductCategory" EntitySet="ProductCategories" />
+            <End Role="ProductCategory1" EntitySet="ProductCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID" Association="GraphStoreModel.FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID">
+            <End Role="ProductCategory" EntitySet="ProductCategories" />
+            <End Role="UserProductCategoryFavorite" EntitySet="UserProductCategoryFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductFiles_dbo_Products_ProductID" Association="GraphStoreModel.FK_dbo_ProductFiles_dbo_Products_ProductID">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductFile" EntitySet="ProductFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductPics_dbo_Products_ProductId" Association="GraphStoreModel.FK_dbo_ProductPics_dbo_Products_ProductId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductPic" EntitySet="ProductPics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductTags_dbo_Products_ProductId" Association="GraphStoreModel.FK_dbo_ProductTags_dbo_Products_ProductId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductTag" EntitySet="ProductTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserFavorites_dbo_Products_ProductId" Association="GraphStoreModel.FK_dbo_UserFavorites_dbo_Products_ProductId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="UserFavorite" EntitySet="UserFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProductTags_dbo_Tags_TagID" Association="GraphStoreModel.FK_dbo_ProductTags_dbo_Tags_TagID">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="ProductTag" EntitySet="ProductTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentMails_Users" Association="GraphStoreModel.FK_SentMails_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SentMail" EntitySet="SentMails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFavorites_Users" Association="GraphStoreModel.FK_UserFavorites_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserFavorite" EntitySet="UserFavorites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProductCategoryFavorites_Users" Association="GraphStoreModel.FK_UserProductCategoryFavorites_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserProductCategoryFavorite" EntitySet="UserProductCategoryFavorites" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="AdvertisementID" />
+          </Key>
+          <Property Name="AdvertisementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilePath" Type="Int32" Nullable="false" />
+          <Property Name="StatusCode" Type="Byte" Nullable="false" />
+          <Property Name="ActiveDate" Type="DateTime" Precision="3" />
+          <Property Name="SentByUserID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DownloadLink">
+          <Key>
+            <PropertyRef Name="DownloadLinkID" />
+          </Key>
+          <Property Name="DownloadLinkID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDetailId" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DownloadToken" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hits" Type="Int32" Nullable="false" />
+          <Property Name="ExpireAfterDownload" Type="Boolean" Nullable="false" />
+          <Property Name="Downloaded" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderDetail" Relationship="GraphStoreModel.FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId" FromRole="DownloadLink" ToRole="OrderDetail" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_DownloadLinks_Users" FromRole="DownloadLink" ToRole="User" />
+        </EntityType>
+        <EntityType Name="EmailTemplate">
+          <Key>
+            <PropertyRef Name="EmailTemplateID" />
+          </Key>
+          <Property Name="EmailTemplateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Footer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailTemplateTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmailTemplateType" Relationship="GraphStoreModel.FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId" FromRole="EmailTemplate" ToRole="EmailTemplateType" />
+          <NavigationProperty Name="SentMails" Relationship="GraphStoreModel.FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID" FromRole="EmailTemplate" ToRole="SentMail" />
+        </EntityType>
+        <EntityType Name="EmailTemplateType">
+          <Key>
+            <PropertyRef Name="EmailTemplateTypeId" />
+          </Key>
+          <Property Name="EmailTemplateTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmailTemplates" Relationship="GraphStoreModel.FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId" FromRole="EmailTemplateType" ToRole="EmailTemplate" />
+        </EntityType>
+        <EntityType Name="FAQ">
+          <Key>
+            <PropertyRef Name="FaqId" />
+          </Key>
+          <Property Name="FaqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Guid" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="Int64" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateById" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="UrlType" Type="Byte" />
+          <NavigationProperty Name="Childs" Relationship="GraphStoreModel.FK_dbo_Menus_dbo_Menus_ParentId" FromRole="Menu" ToRole="Menu1" />
+          <NavigationProperty Name="ParentMenu" Relationship="GraphStoreModel.FK_dbo_Menus_dbo_Menus_ParentId" FromRole="Menu1" ToRole="Menu" />
+          <NavigationProperty Name="Products" Relationship="GraphStoreModel.FK_Products_Menus" FromRole="Menu" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="NewsSubscription">
+          <Key>
+            <PropertyRef Name="NewsSubscriptionID" />
+          </Key>
+          <Property Name="NewsSubscriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_NewsSubscriptions_Users" FromRole="NewsSubscription" ToRole="User" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DownloadLinks" Relationship="GraphStoreModel.FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId" FromRole="OrderDetail" ToRole="DownloadLink" />
+          <NavigationProperty Name="Order" Relationship="GraphStoreModel.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="OrderDetail" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="GraphStoreModel.FK_dbo_OrderDetails_dbo_Products_ProductId" FromRole="OrderDetail" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="TrakingNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsPaied" Type="Boolean" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="GraphStoreModel.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_Orders_Users" FromRole="Order" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <NavigationProperty Name="ProductCategories1" Relationship="GraphStoreModel.FK_dbo_ProductCategories_dbo_ProductCategories_ParentId" FromRole="ProductCategory" ToRole="ProductCategory1" />
+          <NavigationProperty Name="ProductCategory1" Relationship="GraphStoreModel.FK_dbo_ProductCategories_dbo_ProductCategories_ParentId" FromRole="ProductCategory1" ToRole="ProductCategory" />
+          <NavigationProperty Name="UserProductCategoryFavorites" Relationship="GraphStoreModel.FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID" FromRole="ProductCategory" ToRole="UserProductCategoryFavorite" />
+        </EntityType>
+        <EntityType Name="ProductFile">
+          <Key>
+            <PropertyRef Name="ProductFileID" />
+          </Key>
+          <Property Name="ProductFileID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Capacity" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="GraphStoreModel.FK_dbo_ProductFiles_dbo_Products_ProductID" FromRole="ProductFile" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductPic">
+          <Key>
+            <PropertyRef Name="ProductPicID" />
+          </Key>
+          <Property Name="ProductPicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="GraphStoreModel.FK_dbo_ProductPics_dbo_Products_ProductId" FromRole="ProductPic" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DimentionW" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DimentionD" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DimentionH" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DimentionS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Menu" Relationship="GraphStoreModel.FK_Products_Menus" FromRole="Product" ToRole="Menu" />
+          <NavigationProperty Name="OrderDetails" Relationship="GraphStoreModel.FK_dbo_OrderDetails_dbo_Products_ProductId" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="ProductFiles" Relationship="GraphStoreModel.FK_dbo_ProductFiles_dbo_Products_ProductID" FromRole="Product" ToRole="ProductFile" />
+          <NavigationProperty Name="ProductPics" Relationship="GraphStoreModel.FK_dbo_ProductPics_dbo_Products_ProductId" FromRole="Product" ToRole="ProductPic" />
+          <NavigationProperty Name="ProductTags" Relationship="GraphStoreModel.FK_dbo_ProductTags_dbo_Products_ProductId" FromRole="Product" ToRole="ProductTag" />
+          <NavigationProperty Name="UserFavorites" Relationship="GraphStoreModel.FK_dbo_UserFavorites_dbo_Products_ProductId" FromRole="Product" ToRole="UserFavorite" />
+        </EntityType>
+        <EntityType Name="ProductTag">
+          <Key>
+            <PropertyRef Name="ProductTagID" />
+          </Key>
+          <Property Name="ProductTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="TagID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="GraphStoreModel.FK_dbo_ProductTags_dbo_Products_ProductId" FromRole="ProductTag" ToRole="Product" />
+          <NavigationProperty Name="Tag" Relationship="GraphStoreModel.FK_dbo_ProductTags_dbo_Tags_TagID" FromRole="ProductTag" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="SentMail">
+          <Key>
+            <PropertyRef Name="SentMailID" />
+          </Key>
+          <Property Name="SentMailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailTemplateID" Type="Int32" Nullable="false" />
+          <Property Name="SentBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmailTemplate" Relationship="GraphStoreModel.FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID" FromRole="SentMail" ToRole="EmailTemplate" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_SentMails_Users" FromRole="SentMail" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SlidePhoto">
+          <Key>
+            <PropertyRef Name="SlidePhotoId" />
+          </Key>
+          <Property Name="SlidePhotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SlidePhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ProductTags" Relationship="GraphStoreModel.FK_dbo_ProductTags_dbo_Tags_TagID" FromRole="Tag" ToRole="ProductTag" />
+        </EntityType>
+        <EntityType Name="UserFavorite">
+          <Key>
+            <PropertyRef Name="UserFavoriteID" />
+          </Key>
+          <Property Name="UserFavoriteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="GraphStoreModel.FK_dbo_UserFavorites_dbo_Products_ProductId" FromRole="UserFavorite" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_UserFavorites_Users" FromRole="UserFavorite" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UserProductCategoryFavorite">
+          <Key>
+            <PropertyRef Name="UserProductCategoryFavoriteID" />
+          </Key>
+          <Property Name="UserProductCategoryFavoriteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductCategory" Relationship="GraphStoreModel.FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID" FromRole="UserProductCategoryFavorite" ToRole="ProductCategory" />
+          <NavigationProperty Name="User" Relationship="GraphStoreModel.FK_UserProductCategoryFavorites_Users" FromRole="UserProductCategoryFavorite" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Home" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <Property Name="RecruitmentStartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RecruitmentEndDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DownloadLinks" Relationship="GraphStoreModel.FK_DownloadLinks_Users" FromRole="User" ToRole="DownloadLink" />
+          <NavigationProperty Name="NewsSubscriptions" Relationship="GraphStoreModel.FK_NewsSubscriptions_Users" FromRole="User" ToRole="NewsSubscription" />
+          <NavigationProperty Name="Orders" Relationship="GraphStoreModel.FK_Orders_Users" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="SentMails" Relationship="GraphStoreModel.FK_SentMails_Users" FromRole="User" ToRole="SentMail" />
+          <NavigationProperty Name="UserFavorites" Relationship="GraphStoreModel.FK_UserFavorites_Users" FromRole="User" ToRole="UserFavorite" />
+          <NavigationProperty Name="UserProductCategoryFavorite" Relationship="GraphStoreModel.FK_UserProductCategoryFavorites_Users" FromRole="User" ToRole="UserProductCategoryFavorite" />
+        </EntityType>
+        <Association Name="FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId">
+          <End Type="GraphStoreModel.OrderDetail" Role="OrderDetail" Multiplicity="1" />
+          <End Type="GraphStoreModel.DownloadLink" Role="DownloadLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderDetail">
+              <PropertyRef Name="OrderDetailId" />
+            </Principal>
+            <Dependent Role="DownloadLink">
+              <PropertyRef Name="OrderDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DownloadLinks_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="1" />
+          <End Type="GraphStoreModel.DownloadLink" Role="DownloadLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DownloadLink">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId">
+          <End Type="GraphStoreModel.EmailTemplateType" Role="EmailTemplateType" Multiplicity="1" />
+          <End Type="GraphStoreModel.EmailTemplate" Role="EmailTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailTemplateType">
+              <PropertyRef Name="EmailTemplateTypeId" />
+            </Principal>
+            <Dependent Role="EmailTemplate">
+              <PropertyRef Name="EmailTemplateTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID">
+          <End Type="GraphStoreModel.EmailTemplate" Role="EmailTemplate" Multiplicity="1" />
+          <End Type="GraphStoreModel.SentMail" Role="SentMail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailTemplate">
+              <PropertyRef Name="EmailTemplateID" />
+            </Principal>
+            <Dependent Role="SentMail">
+              <PropertyRef Name="EmailTemplateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Menus_dbo_Menus_ParentId">
+          <End Type="GraphStoreModel.Menu" Role="Menu" Multiplicity="0..1" />
+          <End Type="GraphStoreModel.Menu" Role="Menu1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="Menu1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Menus">
+          <End Type="GraphStoreModel.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsSubscriptions_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="GraphStoreModel.NewsSubscription" Role="NewsSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsSubscription">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderID">
+          <End Type="GraphStoreModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="GraphStoreModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Products_ProductId">
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="GraphStoreModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="1" />
+          <End Type="GraphStoreModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductCategories_dbo_ProductCategories_ParentId">
+          <End Type="GraphStoreModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+          <End Type="GraphStoreModel.ProductCategory" Role="ProductCategory1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="ProductCategory1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID">
+          <End Type="GraphStoreModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
+          <End Type="GraphStoreModel.UserProductCategoryFavorite" Role="UserProductCategoryFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="UserProductCategoryFavorite">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductFiles_dbo_Products_ProductID">
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="GraphStoreModel.ProductFile" Role="ProductFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductFile">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductPics_dbo_Products_ProductId">
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="GraphStoreModel.ProductPic" Role="ProductPic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductPic">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductTags_dbo_Products_ProductId">
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="GraphStoreModel.ProductTag" Role="ProductTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductTag">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserFavorites_dbo_Products_ProductId">
+          <End Type="GraphStoreModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="GraphStoreModel.UserFavorite" Role="UserFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserFavorite">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProductTags_dbo_Tags_TagID">
+          <End Type="GraphStoreModel.Tag" Role="Tag" Multiplicity="1" />
+          <End Type="GraphStoreModel.ProductTag" Role="ProductTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagID" />
+            </Principal>
+            <Dependent Role="ProductTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentMails_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="1" />
+          <End Type="GraphStoreModel.SentMail" Role="SentMail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SentMail">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFavorites_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="1" />
+          <End Type="GraphStoreModel.UserFavorite" Role="UserFavorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavorite">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProductCategoryFavorites_Users">
+          <End Type="GraphStoreModel.User" Role="User" Multiplicity="1" />
+          <End Type="GraphStoreModel.UserProductCategoryFavorite" Role="UserProductCategoryFavorite" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserProductCategoryFavorite">
+              <PropertyRef Name="UserProductCategoryFavoriteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GraphStoreModelStoreContainer" CdmEntityContainer="DefaultContext">
+          <EntitySetMapping Name="Advertisements">
+            <EntityTypeMapping TypeName="GraphStoreModel.Advertisement">
+              <MappingFragment StoreEntitySet="Advertisements">
+                <ScalarProperty Name="SentByUserID" ColumnName="SentByUserID" />
+                <ScalarProperty Name="ActiveDate" ColumnName="ActiveDate" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DownloadLinks">
+            <EntityTypeMapping TypeName="GraphStoreModel.DownloadLink">
+              <MappingFragment StoreEntitySet="DownloadLinks">
+                <ScalarProperty Name="Downloaded" ColumnName="Downloaded" />
+                <ScalarProperty Name="ExpireAfterDownload" ColumnName="ExpireAfterDownload" />
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="DownloadToken" ColumnName="DownloadToken" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+                <ScalarProperty Name="DownloadLinkID" ColumnName="DownloadLinkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailTemplates">
+            <EntityTypeMapping TypeName="GraphStoreModel.EmailTemplate">
+              <MappingFragment StoreEntitySet="EmailTemplates">
+                <ScalarProperty Name="EmailTemplateTypeId" ColumnName="EmailTemplateTypeId" />
+                <ScalarProperty Name="Footer" ColumnName="Footer" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="EmailTemplateID" ColumnName="EmailTemplateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailTemplateTypes">
+            <EntityTypeMapping TypeName="GraphStoreModel.EmailTemplateType">
+              <MappingFragment StoreEntitySet="EmailTemplateTypes">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="EmailTemplateTypeId" ColumnName="EmailTemplateTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAQs">
+            <EntityTypeMapping TypeName="GraphStoreModel.FAQ">
+              <MappingFragment StoreEntitySet="FAQs">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="FaqId" ColumnName="FaqId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="GraphStoreModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="CreateById" ColumnName="CreateById" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="FileId" ColumnName="FileId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="GraphStoreModel.Menu">
+              <MappingFragment StoreEntitySet="Menus">
+                <ScalarProperty Name="UrlType" ColumnName="UrlType" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsSubscriptions">
+            <EntityTypeMapping TypeName="GraphStoreModel.NewsSubscription">
+              <MappingFragment StoreEntitySet="NewsSubscriptions">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="NewsSubscriptionID" ColumnName="NewsSubscriptionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="GraphStoreModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="GraphStoreModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IsPaied" ColumnName="IsPaied" />
+                <ScalarProperty Name="TrakingNumber" ColumnName="TrakingNumber" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategories">
+            <EntityTypeMapping TypeName="GraphStoreModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategories">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductFiles">
+            <EntityTypeMapping TypeName="GraphStoreModel.ProductFile">
+              <MappingFragment StoreEntitySet="ProductFiles">
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductFileID" ColumnName="ProductFileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPics">
+            <EntityTypeMapping TypeName="GraphStoreModel.ProductPic">
+              <MappingFragment StoreEntitySet="ProductPics">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PicPath" ColumnName="PicPath" />
+                <ScalarProperty Name="ProductPicID" ColumnName="ProductPicID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="GraphStoreModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+                <ScalarProperty Name="DimentionS" ColumnName="DimentionS" />
+                <ScalarProperty Name="DimentionH" ColumnName="DimentionH" />
+                <ScalarProperty Name="DimentionD" ColumnName="DimentionD" />
+                <ScalarProperty Name="DimentionW" ColumnName="DimentionW" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductTags">
+            <EntityTypeMapping TypeName="GraphStoreModel.ProductTag">
+              <MappingFragment StoreEntitySet="ProductTags">
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductTagID" ColumnName="ProductTagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SentMails">
+            <EntityTypeMapping TypeName="GraphStoreModel.SentMail">
+              <MappingFragment StoreEntitySet="SentMails">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SentBody" ColumnName="SentBody" />
+                <ScalarProperty Name="EmailTemplateID" ColumnName="EmailTemplateID" />
+                <ScalarProperty Name="SentMailID" ColumnName="SentMailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SlidePhotos">
+            <EntityTypeMapping TypeName="GraphStoreModel.SlidePhoto">
+              <MappingFragment StoreEntitySet="SlidePhotos">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SlidePhotoPath" ColumnName="SlidePhotoPath" />
+                <ScalarProperty Name="SlidePhotoId" ColumnName="SlidePhotoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="GraphStoreModel.Tag">
+              <MappingFragment StoreEntitySet="Tags">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserFavorites">
+            <EntityTypeMapping TypeName="GraphStoreModel.UserFavorite">
+              <MappingFragment StoreEntitySet="UserFavorites">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserFavoriteID" ColumnName="UserFavoriteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProductCategoryFavorites">
+            <EntityTypeMapping TypeName="GraphStoreModel.UserProductCategoryFavorite">
+              <MappingFragment StoreEntitySet="UserProductCategoryFavorites">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="UserProductCategoryFavoriteID" ColumnName="UserProductCategoryFavoriteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="GraphStoreModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RecruitmentEndDate" ColumnName="RecruitmentEndDate" />
+                <ScalarProperty Name="RecruitmentStartDate" ColumnName="RecruitmentStartDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+                <ScalarProperty Name="Home" ColumnName="Home" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

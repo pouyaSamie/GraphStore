@@ -1,0 +1,87 @@
+<div class="gallery-box">
+    <!-- Filtering row-->
+    <div class="row-fluid row-flush filtering-box">
+        <div class="col-md-3 pull-right" ng-repeat="item in filteringData">
+            <button type="button" class="btn btn-default" ng-model="test" placeholder="{{item.title}} "
+                    bs-options="icon.label for icon in item.data" bs-select icon-checkmark="" animation="am-fade">
+            </button>
+        </div>
+    </div>
+    <div class="h-divider-sm"></div>
+    <div class="row">
+        <!--<span class="viewInfo">{{ 'LISTVIEW.CURRENT VIEWING' | translate }}: {{keyword}}</span>-->
+        <!--<span class="viewInfo pull-left">{{ 'LISTVIEW.SEARCH RESULT' | translate  }}: {{pageCount*currentPage}} {{ 'LISTVIEW.MODEL FROM' | translate  }} {{totalItems}}</span>-->
+        <div class="breadcrumbs pull-right dirrtl"></div>
+        <div class="sort-box pull-left dirrtl">
+            <span>{{ 'LISTVIEW.SORT BY'  | translate }}:</span>
+
+            <div class="btn-group">
+                <label class="btn active-btn-{{sortingKey == 'date'}}" ng-click="setSortingKey('createDate')"
+                       ng-model="sortBy.date" btn-checkbox>
+                    {{ 'DATE' | translate}}
+                </label>
+                <label class="btn active-btn-{{sortingKey == 'price'}}" ng-click="setSortingKey('price')"
+                       ng-model="sortBy.price" btn-checkbox>{{ 'PRICE' | translate}}</label>
+                <label class="btn active-btn-{{sortingKey == 'rate'}}" ng-click="setSortingKey('rate')"
+                       ng-model="sortBy.rating" btn-checkbox>{{ 'RATING' | translate}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div pagination
+             class="pull-right"
+             total-items="totalItems"
+             max-size="5"
+             next-text="{{ 'NEXT PAGE' | translate}}"
+             previous-text="{{ 'PREV PAGE' | translate}}"
+             ng-model="currentPage"
+             ng-change="pageChanged()"></div>
+
+        <div class="sort-box pull-left ">
+            <span class="dirrtl">:{{ 'LISTVIEW.ENRRIES PER PAGE' | translate }}</span>
+
+            <div class="btn-group pull-left">
+                <label class="pull-right btn active-btn-{{pageCount == '16'}}" ng-click="setPageCount(16)"
+                       ng-model="pageCountOption.small" btn-checkbox>16</label>
+                <label class="pull-right btn active-btn-{{pageCount == '32'}}" ng-click="setPageCount(32)"
+                       ng-model="pageCountOption.middle" btn-checkbox>32</label>
+                <label class="pull-right btn active-btn-{{pageCount == '64'}}" ng-click="setPageCount(64)"
+                       ng-model="pageCountOption.big" btn-checkbox>64</label>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid gallery-plot-area">
+        <div class="loading-bg" ng-show="loading"></div>
+        <div ng-repeat="product in galleryData" class="col-sm-3 block-content pull-right">
+            <div class="gallery-content">
+                <a ui-sref="product({'product_id': product.productId})">
+                    <div class="image-box">
+                        <img ng-if="product.images && product.images[0]" ng-src="/data/img/{{product.images[0]}}"/>
+                        <img ng-hide="product.images && product.images[0]" src="http://placehold.it/350x350"/>
+                        <label class="price">{{product.price}}</label>
+                        <label class="new">{{ 'NEW' | translate }}</label>
+                    </div>
+                </a>
+                <div class="row">
+                    <span class="product-title text-dark ">{{ product.title }}</span>
+
+                    <div ng-if="product.isFavorite" class="star-icon pull-left"></div>
+                    <a ng-click="addToBasket(product)" class="shoping-cart-icon pull-left product-in-basket-{{product.isInBasket}}"
+                       ng-disabled="product.isInBasket" ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 no-padding">
+            <div pagination
+                 class="pull-right"
+                 total-items="totalItems"
+                 max-size="5"
+                 next-text="{{ 'NEXT PAGE' | translate}}"
+                 previous-text="{{ 'PREV PAGE' | translate}}"
+                 ng-model="currentPage"
+                 ng-change="pageChanged()"></div>
+        </div>
+    </div>
+</div>

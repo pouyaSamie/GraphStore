@@ -1,0 +1,79 @@
+<div ng-controller="homeslider" >
+<div class="slider-row  wow fadeInUp"  >
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img ng-src="{{imageUrl}}/sample-1000x300-1.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="{{imageUrl}}/sample-1000x300-2.jpeg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="{{imageUrl}}/sample-1000x300-3.jpeg" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newest row  wow fadeInUp">
+    <div class="container">
+        <div class="section-title">
+            تازه ترین ها
+        </div>
+        <!-- Set up your HTML -->
+        <div id="newestCarousel" class="owl-carousel owl-theme">
+            <div><img src="{{imageUrl}}/sample-200x120-1.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-2.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-3.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-4.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-5.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-6.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+            <div><img src="{{imageUrl}}/sample-200x120-1.jpeg"/> <a class="slanted-link">
+                رایگان
+            </a></div>
+        </div>
+        <div class="custom-owl-navigation">
+            <a class="btn prev"></a>
+            <a class="btn next"></a>
+        </div>
+    </div>
+    <script>
+        var $owl = $("#newestCarousel");
+        $owl.owlCarousel({
+            items: 5
+        });
+        $(".custom-owl-navigation .next").click(function () {
+            $owl.trigger('next.owl.carousel');
+        });
+        $(".custom-owl-navigation .prev").click(function () {
+            $owl.trigger('prev.owl.carousel');
+        });
+    </script>
+</div>
+<div class="advertisment-row row">
+    <div class="container">
+        <div class="col-md-6"><img src="{{imageUrl}}/ads-1.jpg"/></div>
+        <div class="col-md-6"><img class="pull-right" src="{{imageUrl}}/ads-2.jpg"/></div>
+    </div>
+</div>
+</div>

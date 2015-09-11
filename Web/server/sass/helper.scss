@@ -1,0 +1,37 @@
+.h-divider-sm {
+  display: block;
+  width: 100%;
+  float: right;
+  height: 15px;
+}
+
+.dirrtl {
+  direction: rtl;
+}
+
+.text-dark {
+  color: #333;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.no-padding-right {
+  padding-right: 0px;
+}
+
+.remove-border-radius {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+.container {
+  width: 1024px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container-small{
+  width:400px !important;
+}

@@ -1,0 +1,33 @@
+{
+    "key": 8763123,
+    "title": "Product 1",
+    "desc": "Product 1 Decsription",
+    "images": [
+        {
+            "src": "/data/img/sample-300-6.jpeg"
+        },
+        {
+            "src": "/data/img/sample-300-5.jpeg"
+        },
+        {
+            "src": "/data/img/sample-300-4.jpeg"
+        }
+    ],
+    "extentions":[
+        {
+            "name":"cdr"
+        },
+        {
+            "name" : "ai"
+        }
+    ],
+    "tags":["tag1","tag2","sample tag"],
+    "price": 1090,
+    "isNew": true,
+    "rate": 3,
+    "manufacturer": "manufacturer text",
+    "designer": "designer Text",
+    "dimensions": "800 x 300",
+    "categories": "Cat Text",
+    "theme": "theme text"
+}

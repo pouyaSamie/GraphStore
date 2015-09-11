@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7841f39a3594ea593bfed7c167c2fae" Name="Diagram1">
+        <EntityTypeShape EntityType="GraphStoreModel.Advertisement" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.DownloadLink" Width="1.5" PointX="3" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.EmailTemplate" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.EmailTemplateType" Width="1.5" PointX="1.5" PointY="1.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.FAQ" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.File" Width="1.5" PointX="7.75" PointY="3.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.Menu" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.NewsSubscription" Width="1.5" PointX="3" PointY="9.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.OrderDetail" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.Order" Width="1.5" PointX="3" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.ProductCategory" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.ProductFile" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.ProductPic" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.Product" Width="1.5" PointX="3" PointY="11.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.ProductTag" Width="1.5" PointX="8" PointY="6.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.SentMail" Width="1.5" PointX="6" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.SlidePhoto" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.Tag" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.UserFavorite" Width="1.5" PointX="3" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.UserProductCategoryFavorite" Width="1.5" PointX="3" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GraphStoreModel.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="false" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_DownloadLinks_dbo_OrderDetails_OrderDetailId" />
+        <AssociationConnector Association="GraphStoreModel.FK_DownloadLinks_Users" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_EmailTemplates_dbo_EmailTemplateTypes_EmailTemplateTypeId" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_SentMails_dbo_EmailTemplates_EmailTemplateID" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_Menus_dbo_Menus_ParentId" />
+        <AssociationConnector Association="GraphStoreModel.FK_Products_Menus" />
+        <AssociationConnector Association="GraphStoreModel.FK_NewsSubscriptions_Users" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_OrderDetails_dbo_Orders_OrderID" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_OrderDetails_dbo_Products_ProductId" />
+        <AssociationConnector Association="GraphStoreModel.FK_Orders_Users" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_ProductCategories_dbo_ProductCategories_ParentId" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_UserProductCategoryFavorites_dbo_ProductCategories_ProductCategoryID" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_ProductFiles_dbo_Products_ProductID" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_ProductPics_dbo_Products_ProductId" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_ProductTags_dbo_Products_ProductId" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_UserFavorites_dbo_Products_ProductId" />
+        <AssociationConnector Association="GraphStoreModel.FK_dbo_ProductTags_dbo_Tags_TagID" />
+        <AssociationConnector Association="GraphStoreModel.FK_SentMails_Users" />
+        <AssociationConnector Association="GraphStoreModel.FK_UserFavorites_Users" />
+        <AssociationConnector Association="GraphStoreModel.FK_UserProductCategoryFavorites_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

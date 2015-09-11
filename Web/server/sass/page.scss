@@ -1,0 +1,178 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: roya;
+  overflow-x: hidden;
+  background: rgb(237, 237, 237); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(237, 237, 237, 1)), color-stop(100%, rgba(255, 255, 255, 1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+}
+
+* {
+  font-size: 13px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-margin-right {
+  margin-right: 0px;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.slanted-link {
+  background-color: #1AB374;
+  color: #ffffff;
+}
+
+.section-title {
+  width: 100%;
+  text-align: right;
+  height: 40px;
+  line-height: 55px;
+  color: #1AB374;
+  font-family:royaBold !important;
+}
+
+
+.mega-menu {
+  display: block;
+  float: right;
+  width: 100%;
+  margin: 3px 0px 3px 0px;
+  .navbar {
+    min-height: 10px !important;
+  }
+  .dropdown-menu {
+    width: 1024px !important;
+    left: -1px !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height:300px;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+    li {
+      list-style: none;
+      float: right;
+      border-left: 1px solid #CDCDCD;
+      padding: 0px 20px;
+      a {
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        color: #4C4C4C;
+        font-size: 13px;
+        font-family:royaBold !important;
+        font-family:bold;
+      }
+      a:hover{
+        color: #1AB274;
+      }
+    }
+  }
+  li.sub-menu {
+    display: block;
+    width: 25%;
+    height: 24px;
+    float:right;
+    padding: 0px !important;
+    a {
+      display: block;
+      width: 100%;
+      height: 32px;
+      float: right;
+      text-align: right;
+      border-left: 1px solid #cccccc;
+    }
+  }
+  li:last-child {
+    border: none;
+  }
+}
+
+.owl-carousel {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 20px;
+  .owl-item {
+    height: 120px;
+    padding-left: 2px;
+    position: relative;
+    a.slanted-link {
+      padding: 2px 15px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      height:22px;
+      line-height:22px;
+      font-family:royaBold !important;
+    }
+  }
+  .owl-item:first-child {
+    padding-left: 0px !important;
+    a.slanted-link {
+      right: 0px !important;
+    }
+  }
+}
+
+#carousel-example-generic .item {
+
+  height: 300px;
+  overflow: hidden;
+}
+
+#carousel-example-generic .item img {
+  width: 100%;
+  height: auto;
+}
+
+.advertisment-row {
+  margin-bottom: 10px;
+  .container > div {
+    padding: 0px !important;
+    overflow: hidden;
+
+  }
+}
+
+@import "helper";
+@import "footer";
+@import "staff";
+@import "viewcart";
+@import "overbootstrap";
+
+@import "product";
+@import "header";
+@import "owl.carousel";
+@import "fonts";
+@import "icon";
+
+@import "gallery";

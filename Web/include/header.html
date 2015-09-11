@@ -1,0 +1,105 @@
+<div class=" header navbar wow fadeInUp" ng-controller="navBar" >
+    <div class="container">
+        <div class="navbar-brand pull-left col-md-3 no-padding no-margin">
+            <a class="page-logo pull-left" ui-sref="home" href="/#home"></a>
+        </div>
+        <div class="navbar-search-box pull-left col-md-5 col-md-offset-1">
+            <div class="navbar-quick-link">
+                <a class="col-md-2" ui-sref="gallery" href="/#gallery">
+                    <span>
+                        {{'ABOUTUS' | translate}}
+                    </span>
+
+                    <div class="side-line"></div>
+                </a>
+                <a class="col-md-2">
+                    <span>
+                        {{'WHYGRAPHSTORE' | translate}}
+                    </span>
+
+                    <div class="side-line"></div>
+                </a>
+                <a class="col-md-2">
+                    <span>
+                        {{'HELP' | translate}}
+                    </span>
+
+                    <div class="side-line"></div>
+                </a>
+
+                <a class="col-md-2">
+                    <span>
+                        {{'F&Q' | translate}}
+                    </span>
+
+                    <div class="side-line"></div>
+                </a>
+                <a class="col-md-2">
+                    <span>
+                        {{'SUPPORT' | translate}}
+                    </span>
+                </a>
+            </div>
+            <form class="navbar-form  form-inline" ng-controller="search" ng-submit="submitsearch()">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="search-icon" aria-hidden="true"></span>
+                        </div>
+                        <input type="text" class="form-control" id="exampleInputAmount" ng-model="searchTerm"
+                               placeholder="{{ 'SEARCH' | translate }}">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 pull-right no-padding">
+            <div class="navbar-buy-basket row no-margin-right" ng-controller="buyBasket">
+                <div class="pull-right">
+                    <label>
+                        :{{'COUNT' | translate}}
+                    </label>
+                        <span class="value">
+                            {{count}}
+                        </span>
+
+                    <div class="side-line"></div>
+                </div>
+                <div class=" pull-right">
+                    <label>
+                        :{{'PRICE' | translate}}
+                    </label>
+                        <span class="value">
+                            {{totalPrice}}
+                         </span>
+                    <label>
+                        {{'DOLLAR' | translate}}
+                    </label>
+
+                    <div class="side-line"></div>
+                </div>
+                <a class="shoping-cart-icon pull-right" ui-sref="viewcart"
+                   href="/#viewcart"></a>
+            </div>
+
+            <div class=" member-territory row no-margin-right">
+                <div class="pull-right">
+                    <a ng-if="!isAuthenticated()" href="/#login" ui-sref="login">
+                        {{'SIGNIN' | translate}}
+                    </a>
+                    <a ng-if="!isAuthenticated()" class="slanted-link" href="/#signup" ui-sref="signup">
+                        {{'SIGNUP' | translate}}
+                    </a>
+                    <a ng-if="isAuthenticated()" class="slanted-link" href="/#/logout">
+                        {{'LOGOUT' | translate}}
+                    </a>
+                    <a ng-if="isAuthenticated()" ui-sref="profile">
+                        {{user.displayName}}
+                    </a>
+                    <a ng-if="isAuthenticated()" ui-sref="favorite" href="/#/favorite" class="no-padding">
+                        <i class="star-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

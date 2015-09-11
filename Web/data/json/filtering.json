@@ -1,0 +1,74 @@
+[
+  {
+    "title": "دسته بندی",
+    "data": [
+      {
+        "label": "دسته بندی",
+        "value": "filteringKey10"
+      },
+      {
+        "label": "خوراکی",
+        "value": "filteringKey1"
+      },
+      {
+        "label": "پوشاک",
+        "value": "filteringKey2"
+      },
+      {
+        "label": "همون",
+        "value": "filteringKey3"
+      }
+    ]
+  },
+  {
+    "title": "قالب",
+    "data": [
+      {
+        "label": "خوراکی",
+        "value": "filteringKey1"
+      },
+      {
+        "label": "پوشاک",
+        "value": "filteringKey2"
+      },
+      {
+        "label": "همون",
+        "value": "filteringKey3"
+      }
+    ]
+  },
+  {
+    "title": "متریال",
+    "data": [
+      {
+        "label": "خوراکی",
+        "value": "filteringKey1"
+      },
+      {
+        "label": "پوشاک",
+        "value": "filteringKey2"
+      },
+      {
+        "label": "همون",
+        "value": "filteringKey3"
+      }
+    ]
+  },
+  {
+    "title": "پسوند فایل",
+    "data": [
+      {
+        "label": "خوراکی",
+        "value": "filteringKey1"
+      },
+      {
+        "label": "پوشاک",
+        "value": "filteringKey2"
+      },
+      {
+        "label": "همون",
+        "value": "filteringKey3"
+      }
+    ]
+  }
+]

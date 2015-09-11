@@ -1,0 +1,124 @@
+<div class="h-divider-sm"></div>
+<div ng-controller="product" class="product-box-item">
+    <div class="col-md-4 pull-right no-padding-right">
+        <div class="product-gallery">
+            <a ></a>
+            <div class="main-image">
+                <div class="lightbox" ng-click="zoomImage()">
+                    <i class="zoom-icon"></i>
+                </div>
+                <label ng-if="data.isNew" class="new">{{ 'NEW' | translate }}</label>
+                <img class="img-responsive" ng-src="/data/img/{{mainImageUrl}}"/>
+            </div>
+            <div class="image-thumb">
+                <div ng-if="data.images" ng-repeat="image in data.images | filter:searchText track by $index" class="image-item">
+                    <img ng-src="/data/img/{{image}}" ng-click="changeMainImage(image)"/>
+                </div>
+            </div>wq
+        </div>
+    </div>
+    <div class="col-md-8 pull-right">
+        <div class="row -fluid">
+            <div class="col-md-6 pull-right">
+                <label>{{'EXTENSIONS' | translate}}:</label>
+                <div class="hidden-spacer"></div>
+                <div ng-repeat="ext in data.extentions">
+                    <span>
+                    {{ext.name}}
+                </span>
+                    <div class="hidden-spacer"></div>
+                </div>
+            </div>
+            <div class="col-md-6 pull-right">
+                <h3>{{data.title}}</h3>
+                <h6>{{data.desc}}</h6>
+                <label>{{'PRICE' | translate}}:</label><span>{{data.price}}</span>
+
+                <div class="hidden-spacer"></div>
+                <a class="btn btn-primary btn-remove-state-{{isInBasket}}" ng-click="addToBasket()">{{buyBasketText |
+                    translate}}
+                    <span class="shoping-cart-icon-white pull-left"></span>
+                </a>
+                <a ng-if="isAuthenticated()" class="btn btn-primary btn-remove-state-{{data.isFavorite}}" ng-click="addToFavorit()">{{addToFavText |
+                    translate}}
+                    <div class="star-icon-white pull-left"></div>
+                </a>
+                <a  class="btn btn-primary" ng-click="download(data)">
+                    {{ 'DOWNLOAD' | translate}}
+                    <div class="fa fa-download fa-2x pull-left"></div>
+                </a>
+
+                <div class="hidden-spacer"></div>
+                <label>{{'TAGS' | translate}}:</label>
+
+                <div class="hidden-spacer"></div>
+                <div ng-repeat="tag in data.tags">
+                    <span>#{{tag.tagName}}</span>
+                    <div class="hidden-spacer"></div>
+                </div>
+
+                <!--<label>{{'RATE' | translate}}:</label><span>{{data.rate}}</span>-->
+                <!--<div class="hidden-spacer"></div>-->
+                <!--<label>{{'MANUFACTURER' | translate}}:</label><span>{{data.manufacturer}}</span>-->
+                <!--<div class="hidden-spacer"></div>-->
+                <!--<label>{{'DESIGNER' | translate}}:</label><span>{{data.designer}}</span>-->
+                <!--<div class="hidden-spacer"></div>-->
+                <!--<label>{{'DIMENSIONS' | translate}}:</label><span>{{data.dimensions}}</span>-->
+                <!--<div class="hidden-spacer"></div>-->
+                <!--<label>{{'CATEGORIES' | translate}}:</label><span>{{data.categories}}</span>-->
+                <!--<div class="hidden-spacer"></div>-->
+                <!--<label>{{'THEME' | translate}}:</label><span>{{data.theme}}</span>-->
+
+            </div>
+
+        </div>
+        <pre>{{data}}</pre>
+
+    </div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe.
+             It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <div class="pswp__container">
+                <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="viewcart" ng-controller="viewcart" ng-init="loadOrdersArchive()">
+
+
+    <!-- bsActivePane is optional -->
+    <div bs-active-pane="tabs.activeTab" bs-tabs>
+        <div name="1" disabled="{{ tab.disabled }}" bs-pane title="{{'Current Basket' | translate}}">
+            <div class="row viewcart-item" ng-repeat="product in productDict">
+                <div class="col-md-2 pull-right">
+                    <a ui-sref="product({'product_id': product.productId})">
+                        <div class="main-image">
+                            <img ng-src="/data/img/{{product.images[0]}}"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-1 pull-right">
+                    <h5>{{product.title}}</h5>
+                </div>
+                <div class="col-md-3 pull-right">
+                    <button class="btn btn-success" ng-click="removeFromBasket(product)">{{'REMOVE' | translate }}
+                    </button>
+                </div>
+
+                <div class="col-md-6 pull-right text-align-left">
+                    <h2>{{product.price}}</h2>
+                </div>
+            </div>
+            <div class="viewcart-footer">
+                <div class="row label-row">
+                    <div class="col-md-2 pull-left">
+                        <label>{{ 'PAYMENT AMOUNT' | translate}}</label>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <h5>{{product.title}}</h5>
+                    </div>
+                    <div class="col-md-2 pull-left">
+                        <label>{{ 'DISCOUNT' | translate}}</label>
+                    </div>
+                    <div class="col-md-2 pull-left"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 pull-left">
+                        <h2>{{totalPrice}}</h2>
+                    </div>
+                    <div class="col-md-2 pull-left"></div>
+                    <div class="col-md-2 pull-left">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button ng-click="submitBasket()" class="btn btn-success">{{ 'CHECKOUT' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div name="2" disabled="{{ tab.disabled }}" bs-pane title="{{'Orders Archive' | translate}}">
+            <pre ng-repeat="order in ordersArchive" >{{order}}</pre>
+        </div>
+    </div>
+
+
+</div>

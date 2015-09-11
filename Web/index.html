@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Store</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/owl.carousel/assets/owl.carousel.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="bower_components/wowjs/css/libs/animate.css"/>
+    <link rel="stylesheet" href="lib/yamm3-master/yamm/yamm.css"/>
+    <link rel="stylesheet" href="bower_components/photoswipe/dist/photoswipe.css"/>
+    <link rel="stylesheet" href="bower_components/photoswipe/dist/default-skin/default-skin.css"/>
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+
+
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="stylesheet" href="lib/lib.css"/>
+    <!--Scripts-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/owl.carousel/owl.carousel.min.js"></script>
+    <script src="bower_components/wowjs/dist/wow.min.js"></script>
+    <script src="js/page.js"></script>
+    <!--Module-->
+    <!--<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>-->
+    <!--<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
+
+    <script src="lib/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.4.min.js"></script>
+    <script src="lib/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.4.min.js"></script>
+
+    <script src="bower_components/photoswipe/dist/photoswipe.min.js"></script>
+    <script src="bower_components/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+    <script src="bower_components/satellizer/satellizer.min.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
+    <script src="lib/ng-message.js"></script>
+
+    <!--Control-->
+
+    <script src="js/controller/app.js"></script>
+
+    <script src="js/services/services.js"></script>
+
+    <script src="js/controller/menu.js"></script>
+    <script src="js/controller/viewcart.js"></script>
+    <script src="js/controller/factory.js"></script>
+    <script src="js/controller/gallery.js"></script>
+    <script src="js/controller/favorite.js"></script>
+    <script src="js/controller/product.js"></script>
+    <script src="js/controller/buyBasket.js"></script>
+    <script src="js/controller/homeslider.js"></script>
+    <script src="js/controller/search.js"></script>
+    <script src="js/controller/navbar.js"></script>
+
+    <script src="js/auth/login.js"></script>
+    <script src="js/auth/logout.js"></script>
+    <script src="js/auth/signup.js"></script>
+    <script src="js/auth/profile.js"></script>
+    <script src="js/services/account.js"></script>
+
+    <script src="js/directives/passwordMatch.js"></script>
+    <script src="js/directives/passwordStrength.js"></script>
+
+    <!--Scripts END-->
+</head>
+<body ng-app="graphStore">
+<div ng-include="'include/header.html'"></div>
+<div ng-include="'include/menu.html'"></div>
+<div class="row">
+    <div class="container" ui-view></div>
+</div>
+<div ng-include="'include/footer.html'"></div>
+</body>
+</html>

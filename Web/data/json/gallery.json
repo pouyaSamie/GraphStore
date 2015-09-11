@@ -1,0 +1,124 @@
+{
+    "totalItems": 2000,
+    "data": {
+        "product1": {
+            "title": "Product 1",
+            "desc": "Product 1",
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-1.jpeg"
+                }
+            ],
+            "isNew": true
+        },
+        "product2": {
+            "title": "Product 2",
+            "desc": "Product 2",
+            "price": 90,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-2.jpeg"
+                }
+            ],
+            "isNew": true
+        },
+        "product3": {
+            "title": "Product 3",
+            "desc": "Product 3",
+            "price": 20,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-3.jpeg"
+                }
+            ],
+            "isNew": true
+        },
+        "product4": {
+            "title": "Product 4",
+            "desc": "Product 4",
+            "price": 190,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-4.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product5": {
+            "title": "Product 5",
+            "desc": "Product 5",
+            "price": 70,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-5.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product6": {
+            "title": "Product 6",
+            "desc": "Product 6",
+            "price": 260,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-6.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product7": {
+            "title": "Product 7",
+            "desc": "Product 7",
+            "price": 167,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-2.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product8": {
+            "title": "Product 8",
+            "desc": "Product 8",
+            "price": 98,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-3.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product9": {
+            "title": "Product 9",
+            "desc": "Product 9",
+            "price": 67,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-4.jpeg"
+                }
+            ],
+            "isNew": false
+        },
+        "product10": {
+            "title": "Product 10",
+            "desc": "Product 10",
+            "price": 10,
+            "price": 190,
+            "images": [
+                {
+                    "src": "/data/img/sample-300-5.jpeg"
+                }
+            ],
+            "isNew": false
+        }
+    }
+}

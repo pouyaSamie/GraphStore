@@ -1,0 +1,79 @@
+<footer class="footer  wow fadeInDown">
+    <div class="container">
+        <div class="col-md-3">
+            <div class="footer-logo"></div>
+            <div class="footer-under-logo-link-box">
+                <ul>
+                    <li><a href="">
+                        {{ 'LICENSE' | translate }}
+                    </a></li>
+                    <li><a href="">
+                        {{ 'TERMS & CONDITIONS' | translate }}
+                    </a></li>
+                    <li><a href="">
+                        {{ 'FILE FORMATS' | translate }}
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-4 pull-right">
+                <ul class="list-group" ng-controller="menu">
+                    <li class="list-group-item" ng-repeat="menuItem in menuData">
+                        <a href="#">
+                            {{menuItem.title}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 pull-right">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="">
+                        {{ 'NEWS' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="">
+                        {{ 'COOPERATION' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="">
+                        {{ 'WEBLOG' | translate }}
+                    </a></li>
+                    <li class="list-group-item">
+                      <span>
+                        {{ 'FOLLOWUS' | translate }}
+                    </span>
+
+                        <div class="social-network-link">
+                            <div class="fa fa-instagram"></div>
+                            <div class="fa fa-facebook-square"></div>
+                            <div class="fa fa-google-plus-square"></div>
+                            <div class="fa fa-pinterest-square"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 pull-right">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">
+                        {{ 'ABOUTUS' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="#">
+                        {{ 'WHYUS' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="#">
+                        {{ 'HELP' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="#">
+                        {{ 'FAQ' | translate }}
+                    </a></li>
+                    <li class="list-group-item"><a href="#">
+                        {{ 'SUPPORT' | translate }}
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="no-padding col-md-6 other-logo enamad"></div>
+            <div class="no-padding col-md-6 other-logo pasargad"></div>
+        </div>
+    </div>
+</footer>

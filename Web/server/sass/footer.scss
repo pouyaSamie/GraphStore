@@ -1,0 +1,101 @@
+
+footer {
+  .container {
+    padding-top: 20px;
+    margin-top: 15px;
+    border-top: 1px solid #ccc;
+    height: 200px;
+    > div {
+      float: right;
+      padding: 0px;
+    }
+  }
+  .footer-logo {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 120px;
+    background-image: url("../img/mono-chorme-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+  }
+
+  .footer-under-logo-link-box {
+    ul {
+      padding: 0px;
+      margin: 0px;
+      li {
+        list-style: none;
+        float: right;
+        border-left: 1px solid #999999;
+        padding: 0px 6px;
+
+        a {
+          display: block;
+          text-align:right;
+          height: 14px;
+          line-height: 14px;
+          color: #999999;
+          font-family:royaBold !important;
+
+        }
+
+      }
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+
+  .list-group {
+    border-right: 1px solid #cccccc;
+    height: 160px;
+    direction: rtl;
+    padding: 0px 5px 0px 0px;
+    margin: 0px;
+    .list-group-item {
+      border: none;
+      text-align: right;
+      padding: 4px 4px;
+      direction: rtl;
+      font-family:royaBold !important;
+      span,
+      a {
+        color: #7F7F7F;
+      }
+      a:hover {
+        color:#19B173;
+      }
+
+    }
+  }
+  .other-logo {
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .other-logo.enamad {
+    background-image: url('../img/namad.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+  .other-logo.pasargad {
+    background-image: url('../img/bank-pasargad-logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .social-network-link {
+    margin-top: 10px;
+    padding-top: 10px;
+    .fa {
+      color: #999999;
+      font-size: 20px !important;
+      margin-left: 5px;
+    }
+  }
+}

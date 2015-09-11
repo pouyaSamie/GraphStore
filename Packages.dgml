@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Security" Label="Security" Category="Project" />
+    <Node Id="EntityFramework 6.1.0" Label="EntityFramework 6.1.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.Core 2.2.1" Label="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Label="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.Owin 2.2.1" Label="Microsoft.AspNet.Identity.Owin 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.2" Label="Microsoft.AspNet.WebApi 5.2.2" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Owin 5.2.3" Label="Microsoft.AspNet.WebApi.Owin 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.2" Label="Microsoft.AspNet.WebApi.WebHost 5.2.2" Category="Package" />
+    <Node Id="Microsoft.Owin 3.0.1" Label="Microsoft.Owin 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Host.SystemWeb 3.0.1" Label="Microsoft.Owin.Host.SystemWeb 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Security 3.0.1" Label="Microsoft.Owin.Security 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Security.Cookies 2.1.0" Label="Microsoft.Owin.Security.Cookies 2.1.0" Category="Package" />
+    <Node Id="Microsoft.Owin.Security.OAuth 3.0.1" Label="Microsoft.Owin.Security.OAuth 3.0.1" Category="Package" />
+    <Node Id="Newtonsoft.Json 6.0.4" Label="Newtonsoft.Json 6.0.4" Category="Package" />
+    <Node Id="Owin 1.0" Label="Owin 1.0" Category="Package" />
+    <Node Id="Web" Label="Web" Category="Project" />
+    <Node Id="EntityFramework 6.1.0" Label="EntityFramework 6.1.0" Category="Package" />
+    <Node Id="HtmlAgilityPack 1.4.9" Label="HtmlAgilityPack 1.4.9" Category="Package" />
+    <Node Id="iView 1.0.6" Label="iView 1.0.6" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.Core 2.2.1" Label="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Label="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Identity.Owin 2.2.1" Label="Microsoft.AspNet.Identity.Owin 2.2.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.2" Label="Microsoft.AspNet.WebApi 5.2.2" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Owin 5.2.3" Label="Microsoft.AspNet.WebApi.Owin 5.2.3" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.2" Label="Microsoft.AspNet.WebApi.WebHost 5.2.2" Category="Package" />
+    <Node Id="Microsoft.Owin 3.0.1" Label="Microsoft.Owin 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Host.SystemWeb 3.0.1" Label="Microsoft.Owin.Host.SystemWeb 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Security 3.0.1" Label="Microsoft.Owin.Security 3.0.1" Category="Package" />
+    <Node Id="Microsoft.Owin.Security.Cookies 2.1.0" Label="Microsoft.Owin.Security.Cookies 2.1.0" Category="Package" />
+    <Node Id="Microsoft.Owin.Security.OAuth 3.0.1" Label="Microsoft.Owin.Security.OAuth 3.0.1" Category="Package" />
+    <Node Id="Newtonsoft.Json 6.0.4" Label="Newtonsoft.Json 6.0.4" Category="Package" />
+    <Node Id="Owin 1.0" Label="Owin 1.0" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="EntityFramework 6.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security.Cookies 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security.OAuth 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.2" Target="Microsoft.AspNet.WebApi.WebHost 5.2.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.2" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Host.SystemWeb 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Host.SystemWeb 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Security" Target="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Category="Installed Package" />
+    <Link Source="Security" Target="Microsoft.AspNet.Identity.Owin 2.2.1" Category="Installed Package" />
+    <Link Source="Security" Target="Microsoft.AspNet.WebApi 5.2.2" Category="Installed Package" />
+    <Link Source="Security" Target="Microsoft.AspNet.WebApi.Owin 5.2.3" Category="Installed Package" />
+    <Link Source="Security" Target="Microsoft.Owin.Host.SystemWeb 3.0.1" Category="Installed Package" />
+    <Link Source="iView 1.0.6" Target="HtmlAgilityPack 1.4.9" Category="Package Dependency" />
+    <Link Source="iView 1.0.6" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="iView 1.0.6" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="iView 1.0.6" Target="Microsoft.Owin.Host.SystemWeb 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="EntityFramework 6.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security.Cookies 2.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Identity.Owin 2.2.1" Target="Microsoft.Owin.Security.OAuth 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.2" Target="Microsoft.AspNet.WebApi.WebHost 5.2.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Owin 5.2.3" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.2" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Host.SystemWeb 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Host.SystemWeb 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.Cookies 2.1.0" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Owin 1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Microsoft.Owin 3.0.1" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
+    <Link Source="Microsoft.Owin.Security.OAuth 3.0.1" Target="Microsoft.Owin.Security 3.0.1" Category="Package Dependency" />
+    <Link Source="Web" Target="iView 1.0.6" Category="Installed Package" />
+    <Link Source="Web" Target="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Category="Installed Package" />
+    <Link Source="Web" Target="Microsoft.AspNet.Identity.Owin 2.2.1" Category="Installed Package" />
+    <Link Source="Web" Target="Microsoft.AspNet.WebApi 5.2.2" Category="Installed Package" />
+    <Link Source="Web" Target="Microsoft.AspNet.WebApi.Owin 5.2.3" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>
