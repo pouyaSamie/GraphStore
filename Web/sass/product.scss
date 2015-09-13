@@ -1,0 +1,107 @@
+// Product ----------------------------------------------
+.product-box-item {
+  direction: rtl;
+  text-align: right;
+  .image-thumb {
+    display: block;
+    width: 100%;
+    float: right;
+    div.image-item {
+      display: block;
+      width: 80px;
+      float: right;
+      height: 50px;
+      overflow: hidden;
+      padding: 4px 2px;
+      img {
+        max-width: 100%;
+      }
+    }
+    div.image-item:first-child {
+      padding-right: 0px;
+    }
+  }
+  h3 {
+    width: 100%;
+    float: right;
+    color: #333333;
+  }
+  h6 {
+    width: 100%;
+    float: right;
+  }
+  .product-gallery {
+    width: 100%;
+    display: block;
+    float: left;
+    .main-image {
+      display: block;
+      float: left;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      label.new {
+        position:absolute;
+        bottom: 0px;
+        left:0px;
+        background: #19B173;
+        color: #ffffff;
+        padding: 2px 20px;
+        font-size: 11px;
+      }
+
+      .lightbox {
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        padding: 0px 5px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      img {
+        width:100%;
+      }
+    }
+  }
+
+  label {
+    margin-left: 3px;
+    color: #777777;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: normal;
+    float: right;
+  }
+
+  span {
+    color: #999999;
+    float: right;
+  }
+
+  .hidden-spacer {
+    display: block;
+    float: right;
+    width: 100%;
+  }
+
+  a.btn-primary {
+    display: block;
+    width: 160px;
+    line-height: 24px;
+    padding: 3px !important;
+    margin-bottom: 5px;
+    float: right;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    background: #19B173 !important;
+    border: none;
+    text-align: right;
+
+  }
+
+  a.btn-remove-state-true {
+    background: #673FB2 !important;
+  }
+}

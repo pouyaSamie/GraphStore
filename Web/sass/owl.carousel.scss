@@ -1,0 +1,30 @@
+.newest .container {
+  position: relative !important;
+}
+
+.custom-owl-navigation .prev,
+.custom-owl-navigation .next {
+  position: absolute;
+  top: 70px;
+  width: 14px;
+  height: 60px;
+  right: 5px;
+  z-index: 30000;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  background-image: url('../img/custom-owl-navigation.png');
+  background-repeat: no-repeat;
+  background-position: -19px 0px;
+}
+
+.custom-owl-navigation .prev {
+  left: 5px;
+  right: auto;
+
+  background-position: 4px 0px;
+}
+
+.carousel-indicators {
+  bottom: 5px;
+}

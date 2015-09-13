@@ -53,7 +53,26 @@
             </div>
         </div>
         <div name="2" disabled="{{ tab.disabled }}" bs-pane title="{{'Orders Archive' | translate}}">
-            <pre ng-repeat="order in ordersArchive" >{{order}}</pre>
+            <table class="table dirrtl" style="text-align:right;">
+                <thead>
+                    <tr>
+                        <th style="text-align:right;">{{'PRICE' | translate }}</th>
+                        <th style="text-align:right;">{{'isPaied' | translate }}</th>
+                        <th style="text-align:right;">{{ 'orderCount'  | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="order in ordersArchive" >
+                        <td>{{order.amount}}</td>
+                        <td>
+                            <span ng-show="order.isPaied" class="label label-success" >{{ 'paied' | translate}}</span>
+                            <span ng-show="order.isPaied == false" class="label label-warning">{{ 'unPaied' | translate}}</span>
+                        </td>
+                        <td>{{order.orderDetails.length}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre ng-repeat="order in ordersArchive">{{order}}</pre>
         </div>
     </div>
 

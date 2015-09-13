@@ -1,0 +1,242 @@
+
+.input-group-addon {
+  padding: 0px 4px !important;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+.page-logo {
+  position: relative;
+  left: -4px;
+  width: 260px;
+  height: 51px;
+  background-image: url("../img/page-logo.svg");
+  background-repeat: no-repeat;
+  background-position: left 0px;
+  background-size: 100% auto;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  .container {
+    border-bottom: 1px solid #999999;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 6px;
+    > div {
+    }
+  }
+  .member-territory {
+    width: 100%;
+    float: right;
+    a {
+      display: block;
+      height: 25px;
+      line-height: 20px;
+      float: right;
+      text-align: center;
+      font-size: 11px;
+      font-family:royaBold;
+      color: #333333;
+      padding: 3px 10px 5px 10px;
+      margin: 0px 0px;
+      background-color: #D0D2D3;
+    }
+    .slanted-link {
+      color: #ffffff;
+      background-color: #1AB274;
+    }
+  }
+}
+
+.navbar-form {
+  ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #cccccc;
+    opacity: 1;
+    line-height: 20px;
+  }
+  ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #cccccc;
+    opacity: 1;
+    line-height: 20px;
+  }
+  :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #cccccc;
+    line-height: 20px;
+  }
+  .form-group {
+    display: block;
+    float: right;
+    width: 100% !important;
+  }
+  .input-group {
+    display: block;
+    float: right;
+    width: 100%;
+    position: relative;
+    height: 25px;
+  }
+  input {
+    float: right;
+    position: absolute !important;
+    top: 0px;
+    height: 25px;
+    line-height:20px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    text-align: right;
+    color: #CCCCCC;
+    border: 1px solid #cccccc;
+    z-index: 10;
+  }
+  .input-group-addon {
+    background: #cccccc;
+    float: right;
+    position: absolute !important;
+    top: 0px;
+    z-index: 12;
+    width: 25px;
+    height: 25px;
+    line-height: 20px;
+    padding: 2px 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    &:hover {
+      background: #999999;
+    }
+    span {
+      color: #ffffff;
+    }
+  }
+}
+
+.navbar-search-box {
+  float: right;
+  padding: 0px;
+}
+
+.navbar-quick-link {
+  display: block;
+  width: 100%;
+  float: right;
+  margin: 0px 0px 0px 0px;
+  a {
+    width: 20% !important;
+    display: block;
+    padding: 0px 0px;
+    float: right;
+    color: #808080;
+    height: 26px;
+    line-height: 18px;
+    text-align: center;
+    span {
+      height: 26px;
+      line-height: 20px;
+      margin: 0px 0px;
+      padding: 0px;
+      font-family:royaBold !important;
+    }
+    div.side-line {
+      display: block;
+      float: left;
+      width: 1px !important;
+      height: 12px;
+      margin: 4px 0px;
+      background: #888888;
+
+    }
+  }
+}
+
+.navbar-buy-basket {
+  display: block;
+  width: 100%;
+  margin: 0px !important;
+  height: 26px;
+  max-height: 26px;
+  label {
+    float: right;
+    line-height: 22px;
+    text-align: right;
+    color: #4C4C4C;
+    font-family:royaBold !important;
+  }
+  span.value {
+    display: block;
+    float: right;
+    width: 48px;
+    text-align: center;
+    color: #4C4C4C;
+    font-family:royaBold !important;
+  }
+
+  a {
+    margin: 0px 2px;
+    display: block;
+  }
+  span {
+    padding: 0px;
+    text-align: right;
+    line-height: 22px;
+    font-size: 10px;
+  }
+  div {
+    padding: 0px;
+
+  }
+  span.glyphicon {
+    color: #999999;
+    display: block;
+    float: right;
+  }
+  div.side-line {
+    display: block;
+    float: right;
+    width: 1px !important;
+    height: 18px;
+    margin: 3px 3px 0px 4px;
+    background: #CDCDCD;
+  }
+}
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.menu-triangle {
+  display: block;
+  width: 14px;
+  padding: 0px !important;
+  margin: 0px;
+  height: 7px;
+  position: absolute;
+  background-image: url(../img/menu-triangle.png);
+  background-repeat: no-repeat;
+  top: -7px;
+  right: 35px;
+  border: none !important;
+}
+
+.dropdown-menu {
+//  display: block !important;
+//  z-index: 10000;
+  top:24px;
+  border: 1px solid #CACACA;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}

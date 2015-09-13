@@ -1,0 +1,26 @@
+.btn-success {
+  background: #1AB374;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.carousel-indicators .active,
+.carousel-indicators li {
+  width: 8px;
+  height: 8px;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+}
+.carousel-indicators .active{
+  opacity: 1;
+}
+.carousel-indicators {
+  bottom: 0px;
+  height:8px;
+}

@@ -1,0 +1,54 @@
+.viewcart {
+  .row {
+    margin: 0px !important;
+  }
+  .viewcart-item {
+    display: block;
+    text-align: right;
+    width: 100%;
+    padding: 10px 0px;
+    border-top: 1px solid #ddd;
+    h5 {
+      margin-top: 0px;
+      color: #333333;
+      font-weight: bold;
+
+    }
+    h2 {
+      font-weight: bold;
+    }
+    .main-image {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .text-align-left {
+      text-align: left;
+    }
+  }
+  .viewcart-footer {
+    margin-top: 20px;
+    .label-row {
+      border-bottom: 1px solid #ddd;
+      label {
+        color: #777777 !important;
+        font-size: 11px !important;
+        font-weight: normal;
+      }
+    }
+    h2 {
+      font-weight: bold;
+    }
+  }
+}
+
+.nav-tabs{
+  > li{
+    float:right !important;
+    background: none !important;
+    a{
+      background: none !important;
+  }
+  }
+}

@@ -596,7 +596,6 @@
     <Content Include="js\controller\homeslider.js" />
     <Content Include="js\controller\menu.js" />
     <Content Include="js\controller\navbar.js" />
-    <Content Include="js\controller\product.html" />
     <Content Include="js\controller\product.js" />
     <Content Include="js\controller\search.js" />
     <Content Include="js\controller\uploader.js" />
@@ -1299,7 +1298,6 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.vb</LastGenOutput>
     </Content>
-    <Content Include="pages\pages" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
