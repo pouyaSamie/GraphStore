@@ -1248,7 +1248,6 @@
     <Content Include="bower_components\angular-strap\ngfactory.json" />
     <Content Include="bower_components\angular-strap\package.json" />
     <Content Include="bower_components\angular-strap\README.md" />
-    <Content Include="js\directives\.DS_Store" />
     <Content Include="fonts\roya.otf" />
     <Content Include="fonts\roya.ttf" />
     <Content Include="fonts\yekan.otf" />
@@ -1298,6 +1297,19 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.vb</LastGenOutput>
     </Content>
+    <Content Include="sass\fonts.scss" />
+    <Content Include="sass\footer.scss" />
+    <Content Include="sass\gallery.scss" />
+    <Content Include="sass\header.scss" />
+    <Content Include="sass\helper.scss" />
+    <Content Include="sass\icon.scss" />
+    <Content Include="sass\lib.scss" />
+    <Content Include="sass\overbootstrap.scss" />
+    <Content Include="sass\owl.carousel.scss" />
+    <Content Include="sass\page.scss" />
+    <Content Include="sass\product.scss" />
+    <Content Include="sass\staff.scss" />
+    <Content Include="sass\viewcart.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
