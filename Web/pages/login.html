@@ -1,71 +1,78 @@
-<div class="container container-small" ng-controller="LoginCtrl">
+<div class="container " ng-controller="LoginCtrl">
     <div class="row">
-        <div class="center-form panel">
-            <div class="panel-body">
-                <h2 class="text-center">
-                    {{'SIGNIN' | translate}}
-                </h2>
-                <form method="post" ng-submit="login()" name="loginForm">
-                    <div class="form-group has-feedback">
-                        <input class="persian form-control input-lg" type="text" name="email" ng-model="email"
-                               placeholder="{{'EMAIL' | translate}}" required autofocus>
-                        <span class="ion-at form-control-feedback"></span>
-                    </div>
+        <div class="col-xs-4 pull-right">
+            <h5 class="text-right text-muted">
+                <strong>
+                    {{'SIGNIN' | translate }}
+                </strong>
+            </h5>
+            <div class="center-form panel">
+                <div class="panel-body">   
+                    <form method="post" ng-submit="login()" name="loginForm">
+                        <div class="form-group ">
+                            <label class="text-right dirrtl pull-right">
+                                {{'EMAIL' | translate}}
+                            </label>
+                            <input class="persian form-control" type="text" name="email" ng-model="email"
+                                   placeholder="{{'EMAIL' | translate}}" required autofocus>
+                            <span class="ion-at form-control-feedback"></span>
+                        </div>
 
-                    <div class="form-group has-feedback">
-                        <input class="persian form-control input-lg" type="password" name="password" ng-model="password"
-                               placeholder="{{'PASSWORD' | translate}}" required>
-                        <span class="ion-key form-control-feedback"></span>
-                    </div>
+                        <div class="form-group ">
+                            <label class="text-right dirrtl pull-right">
+                                {{'PASSWORD' | translate}}
+                            </label>
+                            <input class="persian form-control" type="password" name="password" ng-model="password"
+                                   placeholder="{{'PASSWORD' | translate}}" required>
+                            <span class="ion-key form-control-feedback"></span>
+                        </div>
 
-                    <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">
-                        {{'SUBMIT' | translate}}
-                    </button>
-
-                    <br/>
-
-                    <p class="text-center">
+                        <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">
+                            {{'SUBMIT' | translate}}
+                        </button>
+                        <br />
+                        <!--<p class="text-center">
                         <a href="#">
                             {{'Forgot your password?' | translate}}
                         </a>
-                    </p>
+                    </p>-->
+                        <p class="text-center text-muted">
+                            <small>
+                                {{"Don't have an account yet?" | translate}}
+                                <a ui-sref="signup" href="/#/signup">
+                                    {{"SIGNUP" | translate}}
+                                </a>
+                            </small>
+                        </p>
+                    </form>
 
-                    <p class="text-center text-muted">
-                        <small>
-                            {{"Don't have an account yet?" | translate}}
-                        <a ui-sref="signup" href="/#/signup">
-                            {{"SIGNUP" | translate}}
-                        </a></small>
-                    </p>
-
-                </form>
-
-                <!--<button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">-->
+                    <!--<button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">-->
                     <!--<i class="ion-social-facebook"></i> Sign in with Facebook-->
-                <!--</button>-->
-                <button class="btn btn-block btn-google-plus" ng-click="authenticate('google')">
-                    <span class="ion-social-googleplus"></span>
+                    <!--</button>-->
+                    <button class="btn btn-block btn-google-plus" ng-click="authenticate('google')">
+                        <span class="ion-social-googleplus"></span>
 
-                    {{"Sign in with Google" | translate}}
-                </button>
-                <!--<button class="btn btn-block btn-linkedin" ng-click="authenticate('linkedin')">-->
+                        {{"Sign in with Google" | translate}}
+                    </button>
+                    <!--<button class="btn btn-block btn-linkedin" ng-click="authenticate('linkedin')">-->
                     <!--<i class="ion-social-linkedin"></i> Sign in with LinkedIn-->
-                <!--</button>-->
-                <!--<button class="btn btn-block btn-twitter" ng-click="authenticate('twitter')">-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-block btn-twitter" ng-click="authenticate('twitter')">-->
                     <!--<i class="ion-social-twitter"></i> Sign in with Twitter-->
-                <!--</button>-->
-                <!--<button class="btn btn-block btn-foursquare" ng-click="authenticate('foursquare')">-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-block btn-foursquare" ng-click="authenticate('foursquare')">-->
                     <!--<i class="fa fa-foursquare"></i> Sign in with Foursquare-->
-                <!--</button>-->
-                <!--<button class="btn btn-block btn-github" ng-click="authenticate('github')">-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-block btn-github" ng-click="authenticate('github')">-->
                     <!--<i class="ion-social-github"></i> Sign in with GitHub-->
-                <!--</button>-->
-                <!--<button class="btn btn-block btn-yahoo" ng-click="authenticate('yahoo')">-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-block btn-yahoo" ng-click="authenticate('yahoo')">-->
                     <!--<i class="ion-social-yahoo"></i> Sign in with Yahoo-->
-                <!--</button>-->
-                <!--<button class="btn btn-block btn-live" ng-click="authenticate('live')">-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-block btn-live" ng-click="authenticate('live')">-->
                     <!--<i class="ion-social-windows"></i> Sign in with Windows Live-->
-                <!--</button>-->
+                    <!--</button>-->
+                </div>
             </div>
         </div>
     </div>

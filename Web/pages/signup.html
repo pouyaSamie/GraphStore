@@ -1,102 +1,219 @@
-<div class="container container-small">
-    <div class="row">
-        <div class="center-form panel">
-            <div class="panel-body">
-                <h2 class="text-center">{{ 'SIGNUP' | translate }}</h2>
 
-                <form method="post" ng-submit="signup()" name="signupForm">
-                    <div class="form-group has-feedback"
-                         ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-                        <input class="persian form-control input-lg" type="text" name="displayName"
-                               ng-model="displayName"
-                               placeholder="{{'NAME' | translate}}" required autofocus>
-                        <span class="ion-person form-control-feedback"></span>
+<div class="container">
+    <form method="post" ng-submit="signup()" name="signupForm">
+        <hr style="border-top:1px solid #999;" />
+        <div class="row">
+            <div class="col-xs-4 pull-right">
+                <h5 class="text-right text-muted">
+                    <strong>
+                        {{'RequiredInfoToSignup' | translate }}
+                    </strong>
+                </h5>
+                <div class="center-form panel">
+                    <div class="panel-body" style="background:#66DDAD;">
+                        <div class="form-group "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'UserName' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="displayName"
+                                   ng-model="displayName"
+                                   placeholder="{{'UserName' | translate}}" required autofocus>
+                            <span class="ion-person form-control-feedback"></span>
 
-                        <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty"
-                             ng-messages="signupForm.displayName.$error">
-                            <div ng-message="required">
-                                {{'You must enter your name.' | translate}}
+                            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty"
+                                 ng-messages="signupForm.displayName.$error">
+                                <div ng-message="required">
+                                    {{'You must enter your name.' | translate}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group has-feedback"
-                         ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
-                        <input class="persian form-control input-lg" type="email" id="email" name="email"
-                               ng-model="email"
-                               placeholder="{{'EMAIL' | translate}}" required>
-                        <span class="ion-at form-control-feedback"></span>
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'EMAIL' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="email" id="email" name="email"
+                                   ng-model="email"
+                                   placeholder="{{'EMAIL' | translate}}" required>
 
-                        <div class="help-block text-danger" ng-if="signupForm.email.$dirty"
-                             ng-messages="signupForm.email.$error">
-                            <div ng-message="required">
-                                {{'Your email address is required.' | translate}}
-                            </div>
-                            <div ng-message="pattern">
-                                {{'Your email address is invalid.' | translate}}
-                            </div>
-                        </div>
-                    </div>
+                            <span class="ion-at form-control-feedback"></span>
 
-                    <div class="form-group has-feedback"
-                         ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
-                        <input password-strength class="persian form-control input-lg" type="password" name="password"
-                               ng-model="password"
-                               placeholder="{{'PASSWORD' | translate}}" required>
-                        <span class="ion-key form-control-feedback"></span>
-
-                        <div class="help-block text-danger" ng-if="signupForm.password.$dirty"
-                             ng-messages="signupForm.password.$error">
-                            <div ng-message="required">
-
-                                {{'Password is required.' | translate}}
+                            <div class="help-block text-danger" ng-if="signupForm.email.$dirty"
+                                 ng-messages="signupForm.email.$error">
+                                <div ng-message="required">
+                                    {{'Your email address is required.' | translate}}
+                                </div>
+                                <div ng-message="pattern">
+                                    {{'Your email address is invalid.' | translate}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group has-feedback"
-                         ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-                        <input password-match="password" class="persian form-control input-lg" type="password"
-                               name="confirmPassword"
-                               ng-model="confirmPassword"
-                               placeholder="{{'CONFIRM_PASSWORD' | translate}}">
-                        <span class="ion-key form-control-feedback"></span>
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'ConfirmEMAIL' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="email" id="email" name="email"
+                                   ng-model="emailConfirm"
+                                   placeholder="{{'ConfirmEMAIL' | translate}}" required>
 
-                        <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty"
-                             ng-messages="signupForm.confirmPassword.$error">
-                            <div ng-message="compareTo">
+                            <span class="ion-at form-control-feedback"></span>
 
-                                {{'Password must match.' | translate}}
+                            <div class="help-block text-danger" ng-if="signupForm.email.$dirty"
+                                 ng-messages="signupForm.email.$error">
+                                <div ng-message="required">
+                                    {{'Your email address is required.' | translate}}
+                                </div>
+                                <div ng-message="pattern">
+                                    {{'Your email address is invalid.' | translate}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <p class="text-center text-muted">
-                        <small>
-                            {{'By clicking on Sign up, you agree to' | translate }}
 
-                            <a href="#">
-                                {{'terms & conditions' | translate }}
 
-                            </a>
-                            <!--and-->
-                            <!--<a href="#">-->
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'PASSWORD' | translate}}
+                            </label>
+                            <input password-strength class="persian form-control  " type="password" name="password"
+                                   ng-model="password"
+                                   placeholder="{{'PASSWORD' | translate}}" required>
+                            <span class="ion-key form-control-feedback"></span>
+
+                            <div class="help-block text-danger" ng-if="signupForm.password.$dirty"
+                                 ng-messages="signupForm.password.$error">
+                                <div ng-message="required">
+
+                                    {{'Password is required.' | translate}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'CONFIRM_PASSWORD' | translate}}
+                            </label>
+                            <input password-match="password" class="persian form-control  " type="password"
+                                   name="confirmPassword"
+                                   ng-model="confirmPassword"
+                                   placeholder="{{'CONFIRM_PASSWORD' | translate}}">
+                            <span class="ion-key form-control-feedback"></span>
+
+                            <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty"
+                                 ng-messages="signupForm.confirmPassword.$error">
+                                <div ng-message="compareTo">
+
+                                    {{'Password must match.' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center text-muted">
+                            <small>
+                                {{'By clicking on Sign up, you agree to' | translate }}
+
+                                <a href="#">
+                                    {{'terms & conditions' | translate }}
+                                </a>
+                                <!--and-->
+                                <!--<a href="#">-->
                                 <!--privacy policy-->
-                            <!--</a>-->
-                        </small>
-                    </p>
-                    <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">
-                        {{'SUBMIT' | translate }}
-                    </button>
-                    <br/>
+                                <!--</a>-->
+                            </small>
+                        </p>
+                        <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">
+                            {{'SUBMIT' | translate }}
+                        </button>
+                        <br />
 
-                    <p class="text-center text-muted">
-                        {{'Already have an account?' | translate }}
-                         <a ui-sref="login" href="/#/login">
+                        <p class="text-center text-muted">
+                            {{'Already have an account?' | translate }}
+                            <a ui-sref="login" href="/#/login">
 
-                             {{'Log in now' | translate }}
-                         </a></p>
-                </form>
+                                {{'Log in now' | translate }}
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 pull-right">
+                <h5 class="text-right dirrtl text-muted">
+                    <strong>
+                        {{'OptionalInfo' | translate }}
+                    </strong>
+                </h5>
+                <div class="center-form panel">
+                    <div class="panel-body">
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'JOB' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="job"
+                                   ng-model="job"
+                                   placeholder="{{'JOB' | translate}}" required autofocus>
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'fieldOfStudy' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="fieldOfStudy"
+                                   ng-model="fieldOfStudy"
+                                   placeholder="{{'fieldOfStudy' | translate}}" required autofocus />
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'CompanyName' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="companyName"
+                                   ng-model="companyName"
+                                   placeholder="{{'CompanyName' | translate}}" required autofocus />
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'MobileNumber' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="mobileNumber"
+                                   ng-model="mobileNumber"
+                                   placeholder="{{'MobileNumber' | translate}}" required autofocus />
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'WebUrl' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="webUrl"
+                                   ng-model="webUrl"
+                                   placeholder="{{'WebUrl' | translate}}" required autofocus>
+                        </div>
+
+                        <div class="form-group  "
+                             ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+                            <label class="text-right dirrtl pull-right">
+                                {{'LivingCity' | translate}}
+                            </label>
+                            <input class="persian form-control  " type="text" name="livingCity"
+                                   ng-model="livingCity"
+                                   placeholder="{{'LivingCity' | translate}}" required autofocus />
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>

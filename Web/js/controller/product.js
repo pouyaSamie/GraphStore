@@ -71,40 +71,98 @@ graphStore.controller('product', function ($scope, $http, $rootScope, Service, $
             $rootScope.$broadcast('addToBasket', {productData: $scope.data});
         }
     };
-    $scope.download = function (data) {
-
+    $scope.download = function (product) {
         $http({
-            url: "/api/files/127485bd-6b8c-4058-a7c8-20e1aadb352d",
+            url: "/api/files/" + product.downloadToken,
             method: "get"
         })
-            .success(function (response) {
-                log("Doiwnload success")
-                log(response)
+            .success(function (data, status, headers) {
+                var octetStreamMime = 'application/octet-stream';
+                var success = false;
+                // Get the filename from the x-filename header or default to "download.bin"
+                var filename = product.productId;//headers['x-filename'] || 'download.bin';
+                // Determine the content type from the header or default to "application/octet-stream"
+                var contentType = headers['content-type'] || octetStreamMime;
 
-                Downloadify.create('downloadify', {
-                    filename: function () {
-                        return "sss";
-                    },
-                    data: function () {
-                        return "sssssss";
-                    },
-                    onComplete: function () {
-                        alert('Your File Has Been Saved!');
-                    },
-                    onCancel: function () {
-                        alert('You have cancelled the saving of this file.');
-                    },
-                    onError: function () {
-                        alert('You must put something in the File Contents or there will be nothing to save!');
-                    },
-                    transparent: false,
-                    swf: 'lib/downloadify/media/downloadify.swf',
-                    downloadImage: 'lib/downloadify/images/download.png',
-                    width: 100,
-                    height: 30,
-                    transparent: true,
-                    append: false
-                });
+                try {
+                    // Try using msSaveBlob if supported
+                    //console.log("Trying saveBlob method ...");
+
+                    var blob = new Blob([data], { type: contentType });
+                    if (navigator.msSaveBlob)
+                        navigator.msSaveBlob(blob, filename);
+                    else {
+                        // Try using other saveBlob implementations, if available
+                        var saveBlob = navigator.webkitSaveBlob || navigator.mozSaveBlob || navigator.saveBlob;
+                        if (saveBlob === undefined) throw "Not supported";
+                        saveBlob(blob, filename);
+                    }
+                    //console.log("saveBlob succeeded");
+                    success = true;
+                } catch (ex) {
+                    //console.log("saveBlob method failed with the following exception:");
+                    //console.log(ex);
+                }
+
+                if (!success) {
+                    // Get the blob url creator
+                    var urlCreator = window.URL || window.webkitURL || window.mozURL || window.msURL;
+                    if (urlCreator) {
+                        // Try to use a download link
+                        var link = document.createElement('a');
+                        if ('download' in link) {
+                            // Try to simulate a click
+                            try {
+                                // Prepare a blob URL
+                                //console.log("Trying download link method with simulated click ...");
+                                var blob = new Blob([data], { type: contentType });
+                                var url = urlCreator.createObjectURL(blob);
+                                link.setAttribute('href', url);
+
+                                // Set the download attribute (Supported in Chrome 14+ / Firefox 20+)
+                                link.setAttribute("download", filename);
+
+                                // Simulate clicking the download link
+                                var event = document.createEvent('MouseEvents');
+                                event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+                                link.dispatchEvent(event);
+
+                                //console.log("Download link method with simulated click succeeded");
+                                success = true;
+
+                            } catch (ex) {
+                                //console.log("Download link method with simulated click failed with the following exception:");
+                                //console.log(ex);
+                            }
+                        }
+
+                        if (!success) {
+                            // Fallback to window.location method
+                            try {
+                                // Prepare a blob URL
+                                // Use application/octet-stream when using window.location to force download
+                                //console.log("Trying download link method with window.location ...");
+                                var blob = new Blob([data], { type: octetStreamMime });
+                                var url = urlCreator.createObjectURL(blob);
+                                window.location = url;
+                                //console.log("Download link method with window.location succeeded");
+                                success = true;
+                            } catch (ex) {
+                                //console.log("Download link method with window.location failed with the following exception:");
+                                //console.log(ex);
+                            }
+                        }
+
+                    }
+                }
+
+                if (!success) {
+                    // Fallback to window.open method
+                    //console.log("No methods worked for saving the arraybuffer, using last resort window.open");
+                    window.open(httpPath, '_blank', '');
+                }
+
+
             });
 
     };
