@@ -27,7 +27,7 @@ local.properties
 
 # PDT-specific
 .buildpath
-
+packages/
 
 #################
 ## Visual Studio
@@ -184,3 +184,4 @@ $RECYCLE.BIN/
 
 
 Web/Web.config
+Web.config

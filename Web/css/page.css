@@ -56,6 +56,7 @@ a:hover {
   height: 40px;
   line-height: 55px;
   color: #1AB374;
+  font-size: 15px;
   font-family: royaBold !important; }
 
 .mega-menu {
@@ -72,7 +73,9 @@ a:hover {
     left: -1px !important;
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 300px; }
+    height: 300px;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
   .mega-menu ul {
     padding: 0px;
     margin: 0px; }
@@ -129,7 +132,7 @@ a:hover {
       right: 0px !important; }
 
 #carousel-example-generic .item {
-  height: 300px;
+  height: 374px;
   overflow: hidden; }
 
 #carousel-example-generic .item img {
@@ -422,7 +425,7 @@ footer .social-network-link {
   padding: 0px 4px !important; }
 
 .header {
-  margin-top: 20px; }
+  margin-top: 48px; }
 
 .page-logo {
   position: relative;
@@ -645,13 +648,10 @@ footer .social-network-link {
 
 @font-face {
   font-family: roya;
-  src: url("../fonts/roya.otf"); }
-@font-face {
-  font-family: roya;
-  src: url("../fonts/roya.ttf"); }
+  src: url("../fonts/Roya.ttf"); }
 @font-face {
   font-family: royaBold;
-  src: url("../fonts/BRoyaBold.ttf"); }
+  src: url("../fonts/RoyaBold.ttf"); }
 .icon-sheet, .shoping-cart-icon-white,
 .shoping-cart-icon, .search-icon, .star-icon-white,
 .star-icon, .zoom-icon {
@@ -728,11 +728,13 @@ footer .social-network-link {
       overflow: hidden;
       direction: rtl; }
       .gallery-box .block-content .gallery-content .image-box {
-        position: relative; }
+        position: relative;
+        height: 180px;
+        overflow: hidden; }
         .gallery-box .block-content .gallery-content .image-box img {
           width: 100%; }
         .gallery-box .block-content .gallery-content .image-box label {
-          width: 60px;
+          width: 69px;
           background: #ffffff;
           position: absolute;
           padding: 2px 15px;
@@ -743,14 +745,18 @@ footer .social-network-link {
           text-align: center; }
         .gallery-box .block-content .gallery-content .image-box label.price {
           bottom: 0px;
-          margin-bottom: 1px !important; }
+          height: 23px;
+          margin-bottom: 0px !important;
+          color: #1AB274; }
         .gallery-box .block-content .gallery-content .image-box label.new {
           margin-bottom: 2px !important;
+          height: 15px;
+          line-height: 15px;
           bottom: 26px;
           background: #19B173;
           color: #ffffff;
           padding: 2px 5px;
-          font-size: 11px; }
+          font-weight: bold; }
       .gallery-box .block-content .gallery-content h5 {
         font-weight: bold;
         font-size: 11px !important; }
