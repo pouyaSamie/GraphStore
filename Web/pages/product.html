@@ -14,7 +14,7 @@
                 <div ng-if="data.images" ng-repeat="image in data.images | filter:searchText track by $index" class="image-item">
                     <img ng-src="/data/img/{{image}}" ng-click="changeMainImage(image)"/>
                 </div>
-            </div>wq
+            </div>
         </div>
     </div>
     <div class="col-md-8 pull-right">
@@ -69,12 +69,14 @@
                 <!--<label>{{'CATEGORIES' | translate}}:</label><span>{{data.categories}}</span>-->
                 <!--<div class="hidden-spacer"></div>-->
                 <!--<label>{{'THEME' | translate}}:</label><span>{{data.theme}}</span>-->
-
             </div>
-
         </div>
-        <pre>{{data}}</pre>
-
+        <table class="table" style="font-family:Tahoma;">
+            <tr ng-repeat="(key, value) in data">
+                <td >{{key}} :</td>
+                <td >{{value}}</td>
+            </tr>
+        </table>
     </div>
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
